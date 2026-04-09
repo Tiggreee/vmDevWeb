@@ -8,6 +8,22 @@ const scrollTargets = document.querySelectorAll('[data-scroll-target]');
 const contactForm = document.querySelector('[data-contact]');
 const toast = document.querySelector('[data-toast]');
 const heroVisual = document.querySelector('.hero__visual');
+
+let idleTimer = null;
+
+const setDimmed = () => document.body.setAttribute('data-dimmed', '');
+const clearDimmed = () => document.body.removeAttribute('data-dimmed');
+
+const resetIdle = () => {
+  clearDimmed();
+  clearTimeout(idleTimer);
+  idleTimer = setTimeout(setDimmed, 4000);
+};
+
+document.addEventListener('mousemove', resetIdle);
+document.addEventListener('keydown', resetIdle);
+document.addEventListener('scroll', resetIdle, true);
+resetIdle();
 const rail = document.querySelector('[data-rail]');
 const railSections = document.querySelectorAll('.rail__section');
 const navLinks = document.querySelectorAll('.nav__link');
