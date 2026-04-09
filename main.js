@@ -175,3 +175,38 @@ if (heroVisual) {
     heroVisual.style.transform = 'translate3d(0, 0, 0)';
   });
 }
+
+const cursorDot = document.querySelector('.cursor:not(.cursor--ring)');
+const cursorRing = document.querySelector('.cursor--ring');
+const spotlight = document.querySelector('.spotlight');
+
+if (cursorDot && cursorRing && spotlight) {
+  let ringX = 0;
+  let ringY = 0;
+  let dotX = 0;
+  let dotY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    dotX = e.clientX;
+    dotY = e.clientY;
+    spotlight.style.setProperty('--mx', `${e.clientX}px`);
+    spotlight.style.setProperty('--my', `${e.clientY}px`);
+  });
+
+  const animateCursor = () => {
+    ringX += (dotX - ringX) * 0.12;
+    ringY += (dotY - ringY) * 0.12;
+    cursorDot.style.left = `${dotX}px`;
+    cursorDot.style.top = `${dotY}px`;
+    cursorRing.style.left = `${ringX}px`;
+    cursorRing.style.top = `${ringY}px`;
+    requestAnimationFrame(animateCursor);
+  };
+
+  animateCursor();
+
+  document.querySelectorAll('a, button, [data-filter]').forEach((el) => {
+    el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor--expanded'));
+    el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor--expanded'));
+  });
+}
