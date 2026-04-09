@@ -28,4 +28,4 @@ Opcion con servidor local (recomendado):
 
 ## GitHub Pages
 El sitio se publica automaticamente con GitHub Actions.
-URL esperada: https://tiggreee.github.io/AccelToolReloaded/
+URL esperada: https://tiggreee.github.io/vmDevWeb/
