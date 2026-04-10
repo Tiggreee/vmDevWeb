@@ -179,9 +179,22 @@ if (heroVisual) {
 
 const cursorDot = document.querySelector('.cursor:not(.cursor--ring)');
 const cursorRing = document.querySelector('.cursor--ring');
-const spotlight = document.querySelector('.spotlight');
+const veil = document.getElementById('veil');
+const veilCtx = veil ? veil.getContext('2d') : null;
 
-if (cursorDot && cursorRing && spotlight) {
+const initVeil = () => {
+  veil.width = window.innerWidth;
+  veil.height = window.innerHeight;
+  veilCtx.fillStyle = 'rgba(6, 6, 8, 0.94)';
+  veilCtx.fillRect(0, 0, veil.width, veil.height);
+};
+
+if (veilCtx) {
+  initVeil();
+  window.addEventListener('resize', initVeil);
+}
+
+if (cursorDot && cursorRing) {
   let ringX = 0;
   let ringY = 0;
   let dotX = 0;
@@ -190,8 +203,18 @@ if (cursorDot && cursorRing && spotlight) {
   document.addEventListener('mousemove', (e) => {
     dotX = e.clientX;
     dotY = e.clientY;
-    spotlight.style.setProperty('--mx', `${e.clientX}px`);
-    spotlight.style.setProperty('--my', `${e.clientY}px`);
+
+    if (veilCtx) {
+      veilCtx.globalCompositeOperation = 'destination-out';
+      const grad = veilCtx.createRadialGradient(e.clientX, e.clientY, 0, e.clientX, e.clientY, 360);
+      grad.addColorStop(0, 'rgba(0,0,0,1)');
+      grad.addColorStop(0.55, 'rgba(0,0,0,0.7)');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      veilCtx.fillStyle = grad;
+      veilCtx.beginPath();
+      veilCtx.arc(e.clientX, e.clientY, 360, 0, Math.PI * 2);
+      veilCtx.fill();
+    }
   });
 
   const animateCursor = () => {

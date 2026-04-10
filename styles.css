@@ -904,16 +904,11 @@ body {
   opacity: 0.6;
 }
 
-.spotlight {
+#veil {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  background: radial-gradient(
-    300px circle at var(--mx, -999px) var(--my, -999px),
-    transparent 0%,
-    rgba(6, 6, 8, 0.93) 65%
-  );
 }
 
 .hero__content > * {
