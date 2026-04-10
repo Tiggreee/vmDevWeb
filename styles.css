@@ -367,27 +367,7 @@ body {
   font-style: normal;
 }
 
-body[data-dimmed] {
-  --ink: rgba(238, 238, 248, 0.04);
-  --muted: rgba(85, 85, 110, 0.04);
-  --stroke: rgba(29, 29, 42, 0.15);
-  --stroke-loud: rgba(44, 44, 62, 0.15);
-}
 
-body[data-dimmed] .hi {
-  color: var(--accent-warm);
-  text-shadow: 0 0 24px rgba(245, 158, 11, 0.45);
-}
-
-body[data-dimmed] .topbar,
-body[data-dimmed] .ticker,
-body[data-dimmed] .footer {
-  opacity: 0.04;
-}
-
-body, .topbar, .ticker, .footer, .statement__text {
-  transition: opacity 0.7s ease, color 0s;
-}
 
 .skills-grid {
   display: grid;
@@ -928,9 +908,12 @@ body, .topbar, .ticker, .footer, .statement__text {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), var(--accent-glow), transparent 70%);
-  transition: background 0.1s;
+  z-index: 2;
+  background: radial-gradient(
+    300px circle at var(--mx, -999px) var(--my, -999px),
+    transparent 0%,
+    rgba(6, 6, 8, 0.93) 65%
+  );
 }
 
 .hero__content > * {
