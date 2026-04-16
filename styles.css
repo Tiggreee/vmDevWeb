@@ -382,6 +382,35 @@ body.modal-open {
   text-decoration: none;
 }
 
+.project__actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.project__actions .project__link {
+  margin-top: 0;
+}
+
+.project__link--demo {
+  color: var(--accent);
+}
+
+.project__status {
+  display: inline-flex;
+  align-items: center;
+  border: 1px dashed var(--stroke);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
