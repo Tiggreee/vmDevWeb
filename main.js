@@ -181,6 +181,7 @@ const cursorDot = document.querySelector('.cursor:not(.cursor--ring)');
 const cursorRing = document.querySelector('.cursor--ring');
 const veil = document.getElementById('veil');
 const veilCtx = veil ? veil.getContext('2d') : null;
+const canUsePointerEffects = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 const initVeil = () => {
   veil.width = window.innerWidth;
@@ -189,12 +190,12 @@ const initVeil = () => {
   veilCtx.fillRect(0, 0, veil.width, veil.height);
 };
 
-if (veilCtx) {
+if (veilCtx && canUsePointerEffects) {
   initVeil();
   window.addEventListener('resize', initVeil);
 }
 
-if (cursorDot && cursorRing) {
+if (cursorDot && cursorRing && canUsePointerEffects) {
   let ringX = 0;
   let ringY = 0;
   let dotX = 0;

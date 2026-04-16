@@ -28,7 +28,7 @@ body {
   background: var(--bg);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
+  cursor: auto;
 }
 
 .app {
@@ -909,6 +909,22 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 2;
+}
+
+.cursor,
+#veil {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .cursor,
+  #veil {
+    display: block;
+  }
 }
 
 .hero__content > * {
