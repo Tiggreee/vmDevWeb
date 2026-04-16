@@ -1,0 +1,18 @@
+{
+  "name": "vmDev Portfolio",
+  "short_name": "vmDev",
+  "start_url": "/vmDevWeb/",
+  "scope": "/vmDevWeb/",
+  "display": "standalone",
+  "background_color": "#0f1418",
+  "theme_color": "#0f1418",
+  "description": "Portfolio tecnico de vmDev enfocado en sistemas reales full stack, IA aplicada y embedded.",
+  "icons": [
+    {
+      "src": "assets/vmdev-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

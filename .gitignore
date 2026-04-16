@@ -1,2 +1,5 @@
 # Instrucciones privadas de Copilot
 .github/copilot-instructions.md
+node_modules/
+.env
+server/data/messages.json

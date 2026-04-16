@@ -65,6 +65,21 @@ body.modal-open {
   backdrop-filter: blur(12px);
 }
 
+.scroll-progress {
+  position: sticky;
+  top: 70px;
+  z-index: 28;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -216,6 +231,68 @@ body.modal-open {
   gap: 12px;
 }
 
+.section--media {
+  padding-top: 20px;
+}
+
+.media {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+}
+
+.media__visual {
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 300px;
+  background: var(--panel);
+}
+
+.media__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.media__content {
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 22px;
+  background: linear-gradient(160deg, rgba(255, 176, 46, 0.09), transparent 45%), var(--panel);
+}
+
+.media__content h2 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 0.95;
+}
+
+.media__content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.media__logos {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.media__logos img {
+  height: 46px;
+  width: auto;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 7px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
 .signal,
 .manifesto {
   border: 1px solid var(--stroke);
@@ -304,6 +381,10 @@ body.modal-open {
   flex-wrap: wrap;
   gap: 9px;
   margin-bottom: 16px;
+}
+
+.chips--period {
+  margin-top: -4px;
 }
 
 .chip {
@@ -476,6 +557,72 @@ body.modal-open {
   color: var(--muted);
 }
 
+.shelf-wrap {
+  border: 1px solid var(--stroke);
+  border-radius: 22px;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%), var(--panel);
+}
+
+.shelf {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+}
+
+.shelf__books {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.book {
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  width: 50px;
+  min-height: 170px;
+  background: linear-gradient(180deg, #25333e, #18242d);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  cursor: pointer;
+  padding: 12px 0;
+  transition: all 0.2s ease;
+}
+
+.book.is-active,
+.book:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+  transform: rotate(180deg) translateY(-2px);
+}
+
+.shelf__panel {
+  display: none;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.shelf__panel.is-active {
+  display: block;
+}
+
+.shelf__panel h3 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.shelf__panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -539,6 +686,24 @@ body.modal-open {
   gap: 6px;
 }
 
+.copy-mail {
+  margin-left: 8px;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.copy-mail:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
 .contact-form {
   display: grid;
   gap: 10px;
@@ -552,6 +717,15 @@ body.modal-open {
   padding: 12px 13px;
   font-size: 14px;
   font-family: inherit;
+}
+
+.input--hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .input:focus {
@@ -587,6 +761,11 @@ textarea.input {
 .button:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 .button--primary {
@@ -715,7 +894,8 @@ textarea.input {
 
 @media (max-width: 1040px) {
   .hero__grid,
-  .contact {
+  .contact,
+  .media {
     grid-template-columns: 1fr;
   }
 
@@ -726,6 +906,19 @@ textarea.input {
   .projects,
   .stack-grid {
     grid-template-columns: 1fr;
+  }
+
+  .shelf {
+    grid-template-columns: 1fr;
+  }
+
+  .shelf__books {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .book {
+    min-height: 132px;
   }
 }
 

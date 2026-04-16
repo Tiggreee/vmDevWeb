@@ -3,8 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de vmDev: sistemas full stack, IA aplicada y soluciones embedded llevadas a produccion real."
+    />
+    <meta name="theme-color" content="#0f1418" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://tiggreee.github.io/vmDevWeb/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="vmDev | Creative Engineer" />
+    <meta
+      property="og:description"
+      content="Sistemas full stack, IA aplicada y embedded para problemas reales con enfoque de produccion."
+    />
+    <meta property="og:url" content="https://tiggreee.github.io/vmDevWeb/" />
+    <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/vmdev-mark.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="vmDev | Creative Engineer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio de ingenieria creativa aplicada a producto real."
+    />
+    <meta name="twitter:image" content="https://tiggreee.github.io/vmDevWeb/assets/vmdev-mark.svg" />
     <title>vmDev | Creative Engineer</title>
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Victor / vmDev",
+        "url": "https://tiggreee.github.io/vmDevWeb/",
+        "jobTitle": "Creative Engineer",
+        "sameAs": [
+          "https://github.com/Tiggreee"
+        ],
+        "knowsAbout": [
+          "Desarrollo Full Stack",
+          "Automatizacion con IA",
+          "Sistemas Embebidos",
+          "Node.js",
+          "ESP32"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -14,14 +56,17 @@
       </a>
       <nav class="nav">
         <a class="nav__link" href="#inicio">Inicio</a>
+        <a class="nav__link" href="#media">Media</a>
         <a class="nav__link" href="#proyectos">Proyectos</a>
         <a class="nav__link" href="#servicios">Servicios</a>
         <a class="nav__link" href="#apps">Lab</a>
+        <a class="nav__link" href="#biblioteca">Biblioteca</a>
         <a class="nav__link" href="#skills">Stack</a>
         <a class="nav__link" href="#contacto">Contacto</a>
       </nav>
       <button class="button button--ghost" data-open="modal">Agenda</button>
     </header>
+    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
     <main>
       <section class="hero section" id="inicio" data-reveal>
@@ -72,6 +117,26 @@
         </div>
       </section>
 
+      <section class="section section--media" id="media" data-reveal>
+        <div class="container media">
+          <div class="media__visual">
+            <img src="assets/1000046563.jpg" alt="Victor vmDev en entorno de desarrollo" loading="lazy" />
+          </div>
+          <div class="media__content">
+            <p class="section__label">MEDIA & BRAND</p>
+            <h2>Imagen, identidad y ejecución</h2>
+            <p>
+              Este portfolio mezcla branding técnico con evidencia real de trabajo.
+              Cada bloque busca comunicar claridad operativa, no solo estética.
+            </p>
+            <div class="media__logos">
+              <img src="assets/vmdev-mark.svg" alt="Marca vmDev" loading="lazy" />
+              <img src="assets/my_vmDev_logo.png" alt="Logo alternativo vmDev" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section section--projects" id="proyectos" data-reveal>
         <div class="container">
           <div class="section__head">
@@ -86,8 +151,13 @@
             <button class="chip" data-filter="embedded">Embedded</button>
             <button class="chip" data-filter="app">App</button>
           </div>
+          <div class="chips chips--period">
+            <button class="chip is-active" data-period="all">Todos los periodos</button>
+            <button class="chip" data-period="2026">2026</button>
+            <button class="chip" data-period="2025">2025</button>
+          </div>
           <div class="projects">
-            <article class="project" data-project="full-stack">
+            <article class="project" data-project="full-stack" data-year="2026">
               <p class="project__meta">FULL STACK / 2026</p>
               <h3>Sentrylog</h3>
               <p>Monitoreo CCTV en tiempo real con alertas y trazabilidad operativa.</p>
@@ -97,7 +167,7 @@
                 <span class="project__status">Demo no publica</span>
               </div>
             </article>
-            <article class="project" data-project="app">
+            <article class="project" data-project="app" data-year="2025">
               <p class="project__meta">APP / 2025</p>
               <h3>FacturAutentico</h3>
               <p>CFDI 4.0 para flujo administrativo real con menor carga manual.</p>
@@ -107,7 +177,7 @@
                 <a class="project__link project__link--demo" href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Ver demo</a>
               </div>
             </article>
-            <article class="project" data-project="ai">
+            <article class="project" data-project="ai" data-year="2025">
               <p class="project__meta">IA APLICADA / 2025</p>
               <h3>AI Lip-Sync Pipeline</h3>
               <p>Pipeline local para video y sincronizacion labial en produccion rapida.</p>
@@ -117,7 +187,7 @@
                 <span class="project__status">Demo privada</span>
               </div>
             </article>
-            <article class="project" data-project="embedded">
+            <article class="project" data-project="embedded" data-year="2026">
               <p class="project__meta">EMBEDDED / 2026</p>
               <h3>ESP32 Telemetry Node</h3>
               <p>Sensores, telemetria y control remoto conectado a dashboard web.</p>
@@ -193,6 +263,35 @@
         </div>
       </section>
 
+      <section class="section" id="biblioteca" data-reveal>
+        <div class="container shelf-wrap">
+          <div class="section__head">
+            <p class="section__label">BIBLIOTECA</p>
+            <h2>Playbooks estilo libro</h2>
+            <p>Seccion discreta para mostrar procesos de trabajo con interaccion simple.</p>
+          </div>
+          <div class="shelf">
+            <div class="shelf__books" role="tablist" aria-label="Playbooks">
+              <button class="book is-active" type="button" data-book-trigger="book-1" role="tab" aria-selected="true">Discovery</button>
+              <button class="book" type="button" data-book-trigger="book-2" role="tab" aria-selected="false">Build</button>
+              <button class="book" type="button" data-book-trigger="book-3" role="tab" aria-selected="false">Scale</button>
+            </div>
+            <div class="shelf__panel is-active" data-book-panel="book-1" role="tabpanel">
+              <h3>Discovery sprint</h3>
+              <p>Diagnostico tecnico, mapa de riesgos y definicion de alcance con fechas reales.</p>
+            </div>
+            <div class="shelf__panel" data-book-panel="book-2" role="tabpanel">
+              <h3>Build pipeline</h3>
+              <p>Entrega por iteraciones cortas, con evidencia funcional y decisiones documentadas.</p>
+            </div>
+            <div class="shelf__panel" data-book-panel="book-3" role="tabpanel">
+              <h3>Scale handoff</h3>
+              <p>Hardening, monitoreo y traspaso operativo para mantener velocidad sin deuda oculta.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="skills" data-reveal>
         <div class="container">
           <div class="section__head">
@@ -238,11 +337,18 @@
             </p>
             <ul class="contact__list">
               <li>LinkedIn: @tiggreee</li>
-              <li>notlikeiusedto@gmail.com</li>
-              <li>victorinox51631@hotmail.com</li>
+              <li>
+                notlikeiusedto@gmail.com
+                <button class="copy-mail" type="button" data-copy-email="notlikeiusedto@gmail.com">Copiar</button>
+              </li>
+              <li>
+                victorinox51631@hotmail.com
+                <button class="copy-mail" type="button" data-copy-email="victorinox51631@hotmail.com">Copiar</button>
+              </li>
             </ul>
           </div>
-          <form class="contact-form" data-contact>
+          <form class="contact-form" data-contact data-api-url="">
+            <input class="input input--hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input class="input" type="text" name="nombre" placeholder="Nombre" required />
             <input class="input" type="email" name="email" placeholder="Email" required />
             <textarea class="input" name="idea" rows="4" placeholder="Que quieres construir" required></textarea>
