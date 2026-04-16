@@ -6,7 +6,8 @@ const scrollTargets = document.querySelectorAll('[data-scroll-target]');
 const contactForm = document.querySelector('[data-contact]');
 const toast = document.querySelector('[data-toast]');
 const navLinks = document.querySelectorAll('.nav__link');
-const sections = document.querySelectorAll('main .section[id]');
+const sections = document.querySelectorAll('main section[id]');
+const revealNodes = document.querySelectorAll('[data-reveal]');
 
 const openModal = () => {
   if (modal) {
@@ -52,17 +53,19 @@ navLinks.forEach((link) => {
     if (!href || !href.startsWith('#')) {
       return;
     }
+
     const target = document.querySelector(href);
     if (!target) {
       return;
     }
+
     event.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-if (sections.length > 0 && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
@@ -70,15 +73,30 @@ if (sections.length > 0 && 'IntersectionObserver' in window) {
         }
         navLinks.forEach((link) => {
           const href = link.getAttribute('href');
-          const isActive = href === `#${entry.target.id}`;
-          link.classList.toggle('is-active', isActive);
+          link.classList.toggle('is-active', href === `#${entry.target.id}`);
         });
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.55 }
   );
 
-  sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  revealNodes.forEach((node) => revealObserver.observe(node));
+} else {
+  revealNodes.forEach((node) => node.classList.add('is-visible'));
 }
 
 if (contactForm) {
