@@ -1,33 +1,40 @@
-<svg width="286" height="84" viewBox="0 0 286 84" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vmdevTitle vmdevDesc">
-  <title id="vmdevTitle">VMDEV monograma</title>
-  <desc id="vmdevDesc">Logomarca VMDEV formada por trazos dobles estilo rayo con check de productividad orientado a la esquina superior derecha</desc>
+<svg width="248" height="84" viewBox="0 0 248 84" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vmdevTitle vmdevDesc">
+  <title id="vmdevTitle">VMDEV mark</title>
+  <desc id="vmdevDesc">Monograma vmDev en lineas dobles con lenguaje lightning y direccion hacia la esquina superior derecha</desc>
 
   <defs>
-    <linearGradient id="lineGrad" x1="10" y1="66" x2="238" y2="8" gradientUnits="userSpaceOnUse">
+    <linearGradient id="vmBolt" x1="168" y1="74" x2="228" y2="18" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffb02e"/>
       <stop offset="1" stop-color="#00c2ff"/>
     </linearGradient>
   </defs>
 
-  <g transform="translate(6,10)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 8L24 62L38 8" stroke="#375061" stroke-width="10"/>
-    <path d="M10 8L24 62L38 8" stroke="url(#lineGrad)" stroke-width="4"/>
+  <g stroke="#f4fbff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 46L22 70L34 46"/>
+    <path d="M40 70V46L50 58L60 46V70"/>
+    <path d="M72 70V40H92C104 40 110 46 110 56C110 66 104 70 92 70H72Z"/>
+    <path d="M118 56H152"/>
+    <path d="M118 56C118 50 123 46 130 46H150"/>
+    <path d="M118 56C118 66 123 70 132 70H152"/>
+    <path d="M170 46L182 70L194 46"/>
+    <path d="M194 46L214 28"/>
+    <path d="M214 28L228 28L220 18"/>
+  </g>
 
-    <path d="M52 62V8L66 38L80 8V62" stroke="#375061" stroke-width="10"/>
-    <path d="M52 62V8L66 38L80 8V62" stroke="url(#lineGrad)" stroke-width="4"/>
+  <g stroke="#00c2ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M14 46L22 62L30 46"/>
+    <path d="M44 70V50L50 58L56 50V70"/>
+    <path d="M76 70V44H92C101 44 106 48 106 56C106 64 101 66 92 66H76"/>
+    <path d="M122 56H148"/>
+    <path d="M122 56C122 52 126 50 132 50H148"/>
+    <path d="M122 56C122 64 126 66 134 66H148"/>
+    <path d="M174 46L182 62L190 46"/>
+    <path d="M194 46L214 28"/>
+  </g>
 
-    <path d="M96 62V8H111C124 8 132 18 132 35C132 52 124 62 111 62H96" stroke="#375061" stroke-width="10"/>
-    <path d="M96 62V8H111C124 8 132 18 132 35C132 52 124 62 111 62H96" stroke="url(#lineGrad)" stroke-width="4"/>
-
-    <path d="M148 8V62M148 8H178M148 35H170M148 62H178" stroke="#375061" stroke-width="10"/>
-    <path d="M148 8V62M148 8H178M148 35H170M148 62H178" stroke="url(#lineGrad)" stroke-width="4"/>
-
-    <path d="M192 8L206 62L220 8" stroke="#375061" stroke-width="10"/>
-    <path d="M192 8L206 62L220 8" stroke="url(#lineGrad)" stroke-width="4"/>
-
-    <path d="M226 44L238 58L266 20" stroke="#375061" stroke-width="10"/>
-    <path d="M226 44L238 58L266 20" stroke="url(#lineGrad)" stroke-width="4"/>
-
-    <path d="M245 42L258 24H250L264 8L258 24H266L252 42H245Z" fill="url(#lineGrad)" stroke="none"/>
+  <g stroke="url(#vmBolt)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M203 41L214 28"/>
+    <path d="M214 28L223 28"/>
+    <path d="M223 28L220 21"/>
   </g>
 </svg>
