@@ -1,0 +1,22 @@
+<svg width="320" height="84" viewBox="0 0 320 84" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vmdevTitle vmdevDesc">
+  <title id="vmdevTitle">VMDEV mark</title>
+  <desc id="vmdevDesc">Logomarca VMDEV con palomita y rayo dirigidos a la esquina superior derecha</desc>
+
+  <defs>
+    <linearGradient id="boltGrad" x1="10" y1="72" x2="86" y2="4" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb02e"/>
+      <stop offset="1" stop-color="#00c2ff"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(4,6)">
+    <path d="M14 52L32 68L70 26" stroke="#f4fbff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M48 56L64 34H54L74 8L66 28H76L56 56H48Z" fill="url(#boltGrad)"/>
+    <path d="M8 8H78V76H8" stroke="#375061" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(98,16)">
+    <text x="0" y="34" fill="#f4fbff" font-family="Bahnschrift, Segoe UI, sans-serif" font-size="34" font-weight="700" letter-spacing="3">VMDEV</text>
+    <path d="M2 50H182" stroke="#375061" stroke-width="2"/>
+  </g>
+</svg>
