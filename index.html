@@ -3,348 +3,235 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vmDev</title>
+    <title>vmDev | Creative Engineer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas id="veil" aria-hidden="true"></canvas>
-    <div class="cursor" aria-hidden="true"></div>
-    <div class="cursor cursor--ring" aria-hidden="true"></div>
-    <div class="app">
-      <header class="topbar">
-        <div class="brand">vmDev</div>
-        <nav class="nav">
-          <a class="nav__link" href="#inicio">Inicio</a>
-          <a class="nav__link" href="#proyectos">Proyectos</a>
-          <a class="nav__link" href="#servicios">Servicios</a>
-          <a class="nav__link" href="#apps">Apps</a>
-          <a class="nav__link" href="#skills">Skills</a>
-          <a class="nav__link" href="#contacto">Contacto</a>
-        </nav>
-        <div class="topbar__actions">
-          <button class="button button--ghost" data-open="modal">Contacto</button>
-          <button class="button" data-open="modal">Trabajemos</button>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#inicio">vmDev</a>
+      <nav class="nav">
+        <a class="nav__link" href="#inicio">Inicio</a>
+        <a class="nav__link" href="#proyectos">Proyectos</a>
+        <a class="nav__link" href="#servicios">Servicios</a>
+        <a class="nav__link" href="#apps">Apps</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#contacto">Contacto</a>
+      </nav>
+      <button class="button button--ghost" data-open="modal">Agenda</button>
+    </header>
+
+    <main>
+      <section class="section hero" id="inicio">
+        <div class="container hero__layout">
+          <div class="hero__content">
+            <p class="eyebrow">Creative Engineer • AI Maker • Full Stack Builder</p>
+            <h1 class="hero__title">Construyo sistemas reales con IA, software y hardware.</h1>
+            <p class="hero__text">
+              Desarrollo productos de punta a punta: LLMs locales, automatizacion, video/lip-sync,
+              backend productivo y nodos ESP32 conectados. Sin humo, con ejecucion real.
+            </p>
+            <div class="hero__actions">
+              <button class="button button--primary" data-scroll-target="proyectos">Ver proyectos reales</button>
+              <button class="button" data-open="modal">Agendar sesion tecnica</button>
+            </div>
+            <div class="hero__metrics">
+              <div class="metric">
+                <span class="metric__value">8+</span>
+                <span class="metric__label">Sistemas lanzados</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">4</span>
+                <span class="metric__label">Verticales dominados</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">2026</span>
+                <span class="metric__label">Disponible remoto</span>
+              </div>
+            </div>
+          </div>
+          <aside class="hero__card">
+            <h2 class="hero__card-title">Stack de trabajo</h2>
+            <ul class="hero__stack">
+              <li>IA local + automatizacion de flujos</li>
+              <li>Video generation + lip-sync pipeline</li>
+              <li>ESP32 + telemetria + control remoto</li>
+              <li>React, Node.js, PostgreSQL, APIs</li>
+            </ul>
+            <p class="hero__card-meta">Morelia, MX · Colaboraciones globales</p>
+          </aside>
         </div>
-      </header>
+      </section>
 
-      <main class="rail" data-rail>
-        <section class="rail__section" id="inicio">
-          <div class="hero">
-            <div class="hero__content">
-              <span class="eyebrow">Victor Salgado — Creative Engineer</span>
-              <h1 class="hero__title">AI Maker<br>&amp; Full Stack Builder</h1>
-              <p class="hero__text">
-                Construyo sistemas completos con <mark class="hi">IA LOCAL</mark>, automatizacion, video/lip-sync y productos conectados con <mark class="hi">ESP32</mark>. De la idea tecnica al despliegue operativo.
-              </p>
-              <div class="hero__actions">
-                <button class="button button--primary" data-scroll-target="proyectos">Ver builds reales</button>
-                <button class="button button--ghost" data-open="modal">Agendar sesion tecnica</button>
-              </div>
-              <div class="hero__stats">
-                <div class="stat">
-                  <div class="stat__value">8+</div>
-                  <div class="stat__label">Sistemas</div>
-                </div>
-                <div class="stat">
-                  <div class="stat__value">4</div>
-                  <div class="stat__label">Verticales</div>
-                </div>
-                <div class="stat">
-                  <div class="stat__value">24/7</div>
-                  <div class="stat__label">Builder mode</div>
-                </div>
-              </div>
-            </div>
-            <div class="hero__visual">
-              <div class="stack-card">
-                <div class="stack-card__title">Sistema operativo actual</div>
-                <div class="stack-card__list">
-                  <span>LLMs locales + automatizacion</span>
-                  <span>Video generation + lip-sync pipeline</span>
-                  <span>ESP32 + telemetria + control remoto</span>
-                  <span>React, Node.js, PostgreSQL, APIs</span>
-                </div>
-                <div class="stack-card__meta">Disponible para colaboraciones 2026</div>
-              </div>
-            </div>
+      <section class="section" id="proyectos">
+        <div class="container">
+          <div class="section__head">
+            <h2>Proyectos destacados</h2>
+            <p>Casos reales con problema, arquitectura y resultado.</p>
           </div>
-          <div class="ticker" aria-hidden="true">
-            <div class="ticker__track">
-              <span class="ticker__item">Full Stack</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Frontend</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Backend</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">React</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Node.js</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">PostgreSQL</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">REST API</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">UI Systems</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Full Stack</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Frontend</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Backend</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">React</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">Node.js</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">PostgreSQL</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">REST API</span>
-              <span class="ticker__sep">/</span>
-              <span class="ticker__item">UI Systems</span>
-              <span class="ticker__sep">/</span>
-            </div>
+          <div class="chips">
+            <button class="chip is-active" data-filter="all">Todos</button>
+            <button class="chip" data-filter="full-stack">Full stack</button>
+            <button class="chip" data-filter="ai">IA aplicada</button>
+            <button class="chip" data-filter="embedded">Embedded</button>
+            <button class="chip" data-filter="app">App</button>
           </div>
-          <div class="statement">
-            <p class="statement__text">Ingenieria aplicada sin humo: <mark class="hi">SOFTWARE + IA + HARDWARE</mark> para resolver problemas reales con sistemas que si operan.</p>
+          <div class="projects-grid">
+            <article class="project" data-project="full-stack">
+              <p class="project__tag">Full stack · 2026</p>
+              <h3>Sentrylog</h3>
+              <p>Monitoreo CCTV en tiempo real con alertas y trazabilidad operativa.</p>
+              <div class="project__stack">React · Node · PostgreSQL · WebSocket</div>
+              <a class="project__link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">Ver repo</a>
+            </article>
+            <article class="project" data-project="app">
+              <p class="project__tag">App · 2025</p>
+              <h3>FacturAutentico</h3>
+              <p>Sistema CFDI 4.0 para operacion diaria y menos carga manual.</p>
+              <div class="project__stack">React · Vite · API REST</div>
+              <a class="project__link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Ver repo</a>
+            </article>
+            <article class="project" data-project="ai">
+              <p class="project__tag">IA aplicada · 2025</p>
+              <h3>AI Lip-Sync Pipeline</h3>
+              <p>Pipeline local de video y sincronizacion para produccion rapida.</p>
+              <div class="project__stack">LLM local · Video pipeline · Automation</div>
+              <a class="project__link" href="#contacto">Solicitar demo</a>
+            </article>
+            <article class="project" data-project="embedded">
+              <p class="project__tag">Embedded · 2026</p>
+              <h3>ESP32 Telemetry Node</h3>
+              <p>Nodo con sensores, telemetria y control remoto via dashboard.</p>
+              <div class="project__stack">ESP32 · Firmware · API · Dashboard</div>
+              <a class="project__link" href="#contacto">Ver caso tecnico</a>
+            </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="rail__section" id="proyectos">
-          <div class="panel">
-          <div class="panel__head">
+      <section class="section" id="servicios">
+        <div class="container">
+          <div class="section__head">
+            <h2>Servicios</h2>
+            <p>Ejecucion tecnica con foco en salida real.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service">
+              <h3>Producto y arquitectura</h3>
+              <p>Definicion de alcance, arquitectura de sistema y roadmap tecnico.</p>
+            </article>
+            <article class="service">
+              <h3>Full stack delivery</h3>
+              <p>Frontend, backend, base de datos y despliegue continuo.</p>
+            </article>
+            <article class="service">
+              <h3>IA aplicada</h3>
+              <p>Automatizacion, pipelines locales y herramientas productivas.</p>
+            </article>
+            <article class="service">
+              <h3>Embedded e IoT</h3>
+              <p>Prototipos ESP32 conectados a servicios y paneles web.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="apps">
+        <div class="container">
+          <div class="section__head">
+            <h2>Lab en progreso</h2>
+            <p>Experimentos y herramientas que alimentan productos reales.</p>
+          </div>
+          <div class="lab-list">
+            <article class="lab-item">
+              <h3>Automation Lab</h3>
+              <p>Scripts para acelerar build, test y entrega de features.</p>
+            </article>
+            <article class="lab-item">
+              <h3>Media AI Toolkit</h3>
+              <p>Flujos de video, sincronizacion y postproceso automatizado.</p>
+            </article>
+            <article class="lab-item">
+              <h3>Realtime Ops UI</h3>
+              <p>Interfaces para telemetria, alertas y monitoreo de operaciones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section__head">
+            <h2>Skills y stack</h2>
+            <p>Herramientas con las que realmente construyo.</p>
+          </div>
+          <div class="skills-columns">
             <div>
-              <h2 class="panel__title">Builds reales</h2>
-              <p class="panel__subtitle">Problema, arquitectura y resultado. Sin demos vacias.</p>
-            </div>
-            <div class="panel__tools">
-              <button class="chip is-active" data-filter="all">Todos</button>
-              <button class="chip" data-filter="web">Web</button>
-              <button class="chip" data-filter="app">App</button>
-              <button class="chip" data-filter="full-stack">Full Stack</button>
-            </div>
-          </div>
-          <ul class="proj-list">
-            <li class="proj-list__item" data-project="full-stack">
-              <div>
-                <div class="proj-list__name">sentrylog</div>
-                <div class="proj-list__desc">Monitoreo CCTV en tiempo real con alertas y trazabilidad operativa</div>
-              </div>
-              <span class="proj-list__cat">Full Stack</span>
-              <span class="proj-list__year">2026</span>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li class="proj-list__item" data-project="app">
-              <div>
-                <div class="proj-list__name">FacturAutentico</div>
-                <div class="proj-list__desc">Automatizacion CFDI 4.0 para flujo administrativo de negocio real</div>
-              </div>
-              <span class="proj-list__cat">App</span>
-              <span class="proj-list__year">2025</span>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li class="proj-list__item" data-project="full-stack">
-              <div>
-                <div class="proj-list__name">AI Lip-Sync Pipeline</div>
-                <div class="proj-list__desc">Pipeline local de video y sincronizacion labial para produccion rapida</div>
-              </div>
-              <span class="proj-list__cat">Full Stack</span>
-              <span class="proj-list__year">2025</span>
-              <a class="proj-list__link" href="#contacto">Demo privada</a>
-            </li>
-            <li class="proj-list__item" data-project="app">
-              <div>
-                <div class="proj-list__name">ESP32 Telemetry Node</div>
-                <div class="proj-list__desc">Nodo embebido con sensores, telemetria y control remoto conectado a dashboard</div>
-              </div>
-              <span class="proj-list__cat">Embedded</span>
-              <span class="proj-list__year">2026</span>
-              <a class="proj-list__link" href="#contacto">Caso tecnico</a>
-            </li>
-            <li class="proj-list__item" data-project="app">
-              <div>
-                <div class="proj-list__name">PawnGO</div>
-                <div class="proj-list__desc">Servicios de empeno a domicilio</div>
-              </div>
-              <span class="proj-list__cat">App</span>
-              <span class="proj-list__year">2025</span>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/PawnGO" target="_blank" rel="noopener">GitHub</a>
-            </li>
-            <li class="proj-list__item" data-project="web">
-              <div>
-                <div class="proj-list__name">Around Auth</div>
-                <div class="proj-list__desc">Red social con autenticacion JWT</div>
-              </div>
-              <span class="proj-list__cat">Web</span>
-              <span class="proj-list__year">2025</span>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/web_project_around_auth" target="_blank" rel="noopener">GitHub</a>
-            </li>
-          </ul>
-          </div>
-        </section>
-
-        <section class="rail__section" id="servicios">
-          <div class="panel">
-          <div class="panel__head">
-            <h2 class="panel__title">Servicios</h2>
-            <p class="panel__subtitle">Paquetes claros, entregas reales y ritmo sostenido.</p>
-          </div>
-          <div class="cards">
-            <article class="card service-card">
-              <div class="card__title">Producto y UX</div>
-              <div class="card__text">Discovery, flujos, wireframes y prototipos. Del <mark class="hi">PROBLEMA</mark> al modelo navegable.</div>
-            </article>
-            <article class="card service-card">
-              <div class="card__title">UI Systems</div>
-              <div class="card__text">Componentes, <mark class="hi">TOKENS</mark> de diseno, librerias limpias y documentadas.</div>
-            </article>
-            <article class="card service-card">
-              <div class="card__title">Frontend</div>
-              <div class="card__text">HTML, CSS, JS y React. Detalle visual, rendimiento y <mark class="hi">ACCESIBILIDAD</mark>.</div>
-            </article>
-            <article class="card service-card">
-              <div class="card__title">Full Stack</div>
-              <div class="card__text">APIs REST, bases de datos, auth y <mark class="hi">DEPLOY</mark>. De cero a produccion.</div>
-            </article>
-          </div>
-          <div class="statement">
-            <p class="statement__text">Proceso: Descubrimiento &rarr; Prototipo &rarr; <mark class="hi">BUILD</mark> &rarr; Deploy &rarr; Iteracion.</p>
-          </div>
-          </div>
-        </section>
-
-        <section class="rail__section" id="apps">
-          <div class="panel">
-          <div class="panel__head">
-            <h2 class="panel__title">Apps y experimentos</h2>
-            <p class="panel__subtitle">R&amp;D activo para IA aplicada, automatizacion y sistemas conectados.</p>
-          </div>
-          <div class="grid">
-            <article class="app-card">
-              <div class="app-card__title">sentrylog</div>
-              <div class="app-card__meta">Observabilidad operativa, eventos en vivo y flujo de respuesta</div>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">GitHub</a>
-            </article>
-            <article class="app-card">
-              <div class="app-card__title">FacturAutentico</div>
-              <div class="app-card__meta">Facturacion CFDI 4.0 con automatizacion de procesos repetitivos</div>
-              <a class="proj-list__link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">GitHub</a>
-            </article>
-            <article class="app-card">
-              <div class="app-card__title">AI Lip-Sync Pipeline</div>
-              <div class="app-card__meta">Pipeline local de video, sincronizacion y entrega automatizada</div>
-              <a class="proj-list__link" href="#contacto">Demo privada</a>
-            </article>
-            <article class="app-card">
-              <div class="app-card__title">ESP32 Telemetry Node</div>
-              <div class="app-card__meta">Sensores, telemetria por API y panel de control remoto</div>
-              <a class="proj-list__link" href="#contacto">Caso tecnico</a>
-            </article>
-            <article class="app-card">
-              <div class="app-card__title">Automation Lab</div>
-              <div class="app-card__meta">Scripts y flujos para acelerar build, pruebas y publicaciones</div>
-              <a class="proj-list__link" href="#contacto">Ver stack</a>
-            </article>
-          </div>
-          </div>
-        </section>
-
-        <section class="rail__section" id="skills">
-          <div class="panel">
-          <div class="panel__head">
-            <h2 class="panel__title">Skills y stack</h2>
-            <p class="panel__subtitle">Foco en front, UI y flujo de trabajo.</p>
-          </div>
-          <div class="skills-grid">
-            <div class="skills-group">
-              <div class="skills-group__label">Lenguajes y frameworks</div>
+              <h3>Lenguajes y frameworks</h3>
               <div class="skills">
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
                 <span class="skill">JavaScript</span>
-                <span class="skill">React.js</span>
-                <span class="skill">Vite</span>
+                <span class="skill">TypeScript</span>
+                <span class="skill">React</span>
                 <span class="skill">Node.js</span>
                 <span class="skill">Express</span>
                 <span class="skill">PostgreSQL</span>
               </div>
             </div>
-            <div class="skills-group">
-              <div class="skills-group__label">Herramientas y flujo</div>
+            <div>
+              <h3>Maker stack</h3>
               <div class="skills">
-                <span class="skill">REST API</span>
-                <span class="skill">JWT Auth</span>
-                <span class="skill">Webpack</span>
-                <span class="skill">Git</span>
-                <span class="skill">UI Systems</span>
-                <span class="skill">Responsive</span>
-                <span class="skill">GitHub Actions</span>
-                <span class="skill">NPM</span>
+                <span class="skill">LLM local</span>
+                <span class="skill">Video pipeline</span>
+                <span class="skill">Lip-sync</span>
+                <span class="skill">ESP32</span>
+                <span class="skill">Automation</span>
+                <span class="skill">APIs</span>
               </div>
             </div>
           </div>
-          <div class="skills-now">
-            <span class="skills-now__label">Aprendiendo</span>
-            <span class="skill">TypeScript</span>
-            <span class="skill">Next.js</span>
-            <span class="skill">Docker</span>
-          </div>
-          <div class="statement">
-            <p class="statement__text">El stack es una herramienta. El <mark class="hi">CRITERIO</mark> es lo que diferencia.</p>
-          </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="rail__section" id="contacto">
-          <div class="panel">
-          <div class="panel__head">
-            <h2 class="panel__title">Contacto</h2>
-            <p class="panel__subtitle">Cuadramos calendario en una llamada corta.</p>
+      <section class="section section--contact" id="contacto">
+        <div class="container contact-layout">
+          <div>
+            <h2>Hablemos de tu proyecto</h2>
+            <p>
+              Si necesitas alguien que conecte producto, IA, software y hardware,
+              podemos armar un plan tecnico accionable.
+            </p>
+            <ul class="contact-list">
+              <li>LinkedIn: @tiggreee</li>
+              <li>notlikeiusedto@gmail.com</li>
+              <li>victorinox51631@hotmail.com</li>
+            </ul>
           </div>
-          <div class="contact">
-            <div class="contact__info">
-              <h3>Disponible para proyectos <mark class="hi">SELECTOS</mark>.</h3>
-              <p>Escribe un mensaje rapido y te respondo con tiempos y plan.</p>
-              <div class="link-list">
-                <div class="link-item">LinkedIn: @tiggreee</div>
-                <div class="link-item">notlikeiusedto@gmail.com</div>
-                <div class="link-item">victorinox51631@hotmail.com</div>
-              </div>
-              <div class="contact__tags">
-                <span class="tag">Latam</span>
-                <span class="tag tag--ghost">Remote</span>
-                <span class="tag tag--dark">2026</span>
-              </div>
-            </div>
-            <form class="contact-form" data-contact>
-              <input class="input" type="text" placeholder="Nombre" required />
-              <input class="input" type="email" placeholder="Email" required />
-              <textarea class="input" rows="4" placeholder="Tu idea" required></textarea>
-              <button class="button" type="submit">Enviar</button>
-            </form>
-          </div>
-          </div>
-        </section>
-      </main>
+          <form class="contact-form" data-contact>
+            <input class="input" type="text" placeholder="Nombre" required />
+            <input class="input" type="email" placeholder="Email" required />
+            <textarea class="input" rows="4" placeholder="Que necesitas construir" required></textarea>
+            <button class="button button--primary" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
 
-      <footer class="footer">
-        <div>vmDev Portfolio</div>
-        <div>Hecho con foco en detalle visual.</div>
-      </footer>
-    </div>
+    <footer class="footer">
+      <p>vmDev Portfolio</p>
+      <p>Creative engineering con ejecucion real.</p>
+    </footer>
 
     <div class="modal" data-modal>
       <div class="modal__overlay" data-close="modal"></div>
       <div class="modal__content">
         <div class="modal__head">
-          <div class="modal__title">Agendar llamada</div>
-          <button class="icon-button" data-close="modal">x</button>
+          <h3>Agendar sesion tecnica</h3>
+          <button class="icon-button" type="button" data-close="modal">x</button>
         </div>
         <form class="modal__form">
-          <label class="label">Nombre</label>
-          <input class="input" type="text" placeholder="Tu nombre" />
-          <label class="label">Email</label>
-          <input class="input" type="email" placeholder="tu@email.com" />
-          <button class="button" type="button" data-close="modal">Listo</button>
+          <input class="input" type="text" placeholder="Nombre" />
+          <input class="input" type="email" placeholder="Email" />
+          <button class="button button--primary" type="button" data-close="modal">Listo</button>
         </form>
       </div>
     </div>
