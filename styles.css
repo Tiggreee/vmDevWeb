@@ -31,6 +31,10 @@ body {
   min-height: 100vh;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .noise {
   position: fixed;
   inset: 0;
@@ -317,6 +321,15 @@ body {
   gap: 14px;
 }
 
+.projects__empty {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px dashed var(--stroke);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .project {
   border: 1px solid var(--stroke);
   border-radius: 20px;
@@ -508,6 +521,11 @@ body {
   box-shadow: 0 0 0 2px rgba(32, 211, 166, 0.2);
 }
 
+.input.is-invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 2px rgba(255, 107, 90, 0.2);
+}
+
 textarea.input {
   min-height: 130px;
   resize: vertical;
@@ -634,6 +652,11 @@ textarea.input {
 .toast.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.toast.is-error {
+  background: var(--danger);
+  color: #1a0908;
 }
 
 .is-hidden {

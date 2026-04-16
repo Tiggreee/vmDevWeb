@@ -114,6 +114,7 @@
               <a class="project__link" href="#contacto">Ver caso tecnico</a>
             </article>
           </div>
+          <p class="projects__empty is-hidden" data-filter-empty>No hay proyectos en esta categoria por ahora.</p>
         </div>
       </section>
 
@@ -227,9 +228,9 @@
             </ul>
           </div>
           <form class="contact-form" data-contact>
-            <input class="input" type="text" placeholder="Nombre" required />
-            <input class="input" type="email" placeholder="Email" required />
-            <textarea class="input" rows="4" placeholder="Que quieres construir" required></textarea>
+            <input class="input" type="text" name="nombre" placeholder="Nombre" required />
+            <input class="input" type="email" name="email" placeholder="Email" required />
+            <textarea class="input" name="idea" rows="4" placeholder="Que quieres construir" required></textarea>
             <button class="button button--primary" type="submit">Enviar</button>
           </form>
         </div>
@@ -241,22 +242,22 @@
       <p>Creative engineering en produccion real</p>
     </footer>
 
-    <div class="modal" data-modal>
+    <div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal__overlay" data-close="modal"></div>
-      <div class="modal__content">
+      <div class="modal__content" data-modal-content>
         <div class="modal__head">
-          <h3>Agendar sesion tecnica</h3>
+          <h3 id="modal-title">Agendar sesion tecnica</h3>
           <button class="icon-button" type="button" data-close="modal">x</button>
         </div>
         <form class="modal__form">
-          <input class="input" type="text" placeholder="Nombre" />
-          <input class="input" type="email" placeholder="Email" />
+          <input class="input" type="text" name="nombre" placeholder="Nombre" />
+          <input class="input" type="email" name="email" placeholder="Email" />
           <button class="button button--primary" type="button" data-close="modal">Listo</button>
         </form>
       </div>
     </div>
 
-    <div class="toast" data-toast>Mensaje enviado</div>
+    <div class="toast" data-toast role="status" aria-live="polite">Mensaje enviado</div>
     <script src="main.js"></script>
   </body>
 </html>
