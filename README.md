@@ -27,5 +27,5 @@ Opcion con servidor local (recomendado):
 - assets/: recursos visuales.
 
 ## GitHub Pages
-El sitio se publica automaticamente con GitHub Actions.
+Configuracion: Settings > Pages > Deploy from a branch > main > /(root).
 URL esperada: https://tiggreee.github.io/vmDevWeb/
