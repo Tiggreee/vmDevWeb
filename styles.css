@@ -83,15 +83,23 @@ body.modal-open {
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   text-decoration: none;
 }
 
 .brand__logo {
-  height: 40px;
+  height: 36px;
   width: auto;
   display: block;
   filter: drop-shadow(0 0 0 rgba(0, 194, 255, 0));
   transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.brand__icon {
+  height: 24px;
+  width: 24px;
+  opacity: 0.85;
+  display: block;
 }
 
 .brand:hover .brand__logo {
@@ -235,10 +243,20 @@ body.modal-open {
   padding-top: 20px;
 }
 
+.section--bio-discreet {
+  padding-top: 26px;
+  padding-bottom: 56px;
+}
+
 .media {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 16px;
+}
+
+.media--discreet {
+  grid-template-columns: 1.1fr 0.9fr;
+  opacity: 0.9;
 }
 
 .media__visual {
@@ -264,6 +282,10 @@ body.modal-open {
   background: linear-gradient(160deg, rgba(255, 176, 46, 0.09), transparent 45%), var(--panel);
 }
 
+.media__content--quiet {
+  background: linear-gradient(160deg, rgba(0, 194, 255, 0.05), transparent 45%), var(--panel);
+}
+
 .media__content h2 {
   margin: 8px 0;
   font-size: clamp(32px, 4vw, 52px);
@@ -284,6 +306,10 @@ body.modal-open {
   flex-wrap: wrap;
 }
 
+.media__logos--triple img:nth-child(2) {
+  height: 52px;
+}
+
 .media__logos img {
   height: 46px;
   width: auto;
@@ -291,6 +317,11 @@ body.modal-open {
   border-radius: 12px;
   padding: 7px;
   background: rgba(255, 255, 255, 0.02);
+}
+
+.media__visual--discreet {
+  min-height: 250px;
+  max-height: 320px;
 }
 
 .signal,
@@ -938,7 +969,12 @@ textarea.input {
   }
 
   .brand__logo {
-    height: 34px;
+    height: 32px;
+  }
+
+  .brand__icon {
+    height: 21px;
+    width: 21px;
   }
 
   .section {
