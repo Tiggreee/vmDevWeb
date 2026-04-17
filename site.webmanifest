@@ -9,9 +9,21 @@
   "description": "Portfolio tecnico de vmDev enfocado en sistemas reales full stack, IA aplicada y embedded.",
   "icons": [
     {
-      "src": "assets/vmdev-mark.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/vmDev_Icon_16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/vmDev_Icon_32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/vmDev_Icon_64.png",
+      "sizes": "64x64",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
