@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de vmDev: sistemas full stack, IA aplicada y soluciones embedded llevadas a produccion real."
+      content="Portfolio de vmDev: desarrollo web full stack orientado a resolucion de problemas y mejora continua."
     />
     <meta name="theme-color" content="#0f1418" />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://tiggreee.github.io/vmDevWeb/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="vmDev | Creative Engineer" />
+    <meta property="og:title" content="vmDev | Desarrollo Web" />
     <meta
       property="og:description"
-      content="Sistemas full stack, IA aplicada y embedded para problemas reales con enfoque de produccion."
+      content="Desarrollo web full stack para resolver problemas reales con enfoque funcional y mejora continua."
     />
     <meta property="og:url" content="https://tiggreee.github.io/vmDevWeb/" />
-    <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/vmDev_HighRes_Brackets.png" />
+    <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/my_vmDev_logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="vmDev | Creative Engineer" />
+    <meta name="twitter:title" content="vmDev | Desarrollo Web" />
     <meta
       name="twitter:description"
-      content="Portfolio de ingenieria creativa aplicada a producto real."
+      content="Portfolio de desarrollo web full stack orientado a resultados funcionales."
     />
-    <meta name="twitter:image" content="https://tiggreee.github.io/vmDevWeb/assets/vmDev_HighRes_Brackets.png" />
-    <title>vmDev | Creative Engineer</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/vmDev_Icon_16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/vmDev_Icon_32.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/vmDev_Icon_64.png" />
+    <meta name="twitter:image" content="https://tiggreee.github.io/vmDevWeb/assets/my_vmDev_logo.png" />
+    <title>vmDev | Desarrollo Web</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/vmdev_favicon_16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/vmdev_favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/vmdev_favicon_64.png" />
+    <link rel="apple-touch-icon" href="assets/vmdev_favicon_192.png" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
@@ -37,16 +38,17 @@
         "@type": "Person",
         "name": "Victor / vmDev",
         "url": "https://tiggreee.github.io/vmDevWeb/",
-        "jobTitle": "Creative Engineer",
+        "jobTitle": "Desarrollador Web Full Stack",
         "sameAs": [
           "https://github.com/Tiggreee"
         ],
         "knowsAbout": [
-          "Desarrollo Full Stack",
-          "Automatizacion con IA",
-          "Sistemas Embebidos",
+          "Desarrollo Web Full Stack",
+          "Frontend",
+          "Backend",
+          "Diseno de APIs",
           "Node.js",
-          "ESP32"
+          "React"
         ]
       }
     </script>
@@ -55,8 +57,7 @@
     <div class="noise" aria-hidden="true"></div>
     <header class="topbar">
       <a class="brand" href="#inicio" aria-label="vmDev inicio">
-        <img class="brand__logo" src="assets/vmDev_Web_Banner.png" alt="vmDev Victor Manuel Developer" />
-        <img class="brand__icon" src="assets/vmDev_Icon_32.png" alt="" aria-hidden="true" />
+        <img class="brand__logo" src="assets/vmdev_header_logo.png" alt="Logo vmDev" />
       </a>
       <nav class="nav">
         <a class="nav__link" href="#inicio">Inicio</a>
@@ -75,28 +76,58 @@
       <section class="hero section" id="inicio" data-reveal>
         <div class="container hero__grid">
           <div class="hero__left">
-            <p class="kicker">CREATIVE ENGINEER / AI MAKER / EMBEDDED BUILDER</p>
-            <h1 class="hero__title">Diseño sistemas completos que sí llegan a producción.</h1>
+            <p class="kicker">DESARROLLO WEB / FULL STACK / MEJORA CONTINUA</p>
+            <h1 class="hero__title">Desarrollo web full stack orientado a la resolucion de problemas y mejora continua.</h1>
             <p class="hero__copy">
-              Trabajo de punta a punta: IA local, backend, automatización y ESP32 conectados.
-              Me enfoco en resolver problemas reales con implementación clara y mantenimiento simple.
+              Trabajo de punta a punta en aplicaciones web: interfaz, backend, base de datos y despliegue.
+              Prioridad absoluta en funcionalidad, claridad tecnica y mejora continua del producto.
             </p>
             <div class="hero__actions">
               <button class="button button--primary" data-scroll-target="proyectos">Ver casos reales</button>
               <button class="button" data-open="modal">Sesion tecnica</button>
             </div>
             <div class="hero__rail">
-              <span>IA LOCAL</span>
-              <span>AUTOMATIZACION</span>
-              <span>VIDEO + LIP-SYNC</span>
-              <span>ESP32 + IOT</span>
-              <span>FULL STACK DELIVERY</span>
+              <span>REACT</span>
+              <span>NODE.JS</span>
+              <span>APIS REST</span>
+              <span>AUTENTICACION</span>
+              <span>DEPLOY</span>
             </div>
             <div class="hero__banner" aria-hidden="true">
               <span>BUILDER MODE</span>
               <span>BUILDER MODE</span>
               <span>BUILDER MODE</span>
               <span>BUILDER MODE</span>
+            </div>
+            <div class="hero__showcase" aria-label="Capturas de repositorios reales en GitHub">
+              <a class="hero-shot hero-shot--wide hero-shot--link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">
+                <img src="https://opengraph.githubassets.com/vmdev/Tiggreee/sentrylog" alt="Vista previa del repositorio Sentrylog" loading="lazy" />
+                <div class="hero-shot__meta">
+                  <span>Sentrylog</span>
+                  <span>GitHub</span>
+                </div>
+              </a>
+              <a class="hero-shot hero-shot--tall hero-shot--link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">
+                <img src="https://opengraph.githubassets.com/vmdev/Tiggreee/FacturAutentico" alt="Vista previa del repositorio FacturAutentico" loading="lazy" />
+                <div class="hero-shot__meta">
+                  <span>FacturAutentico</span>
+                  <span>GitHub</span>
+                </div>
+              </a>
+              <a class="hero-shot hero-shot--link" href="https://github.com/Tiggreee/AccelToolReloaded" target="_blank" rel="noopener">
+                <img src="https://opengraph.githubassets.com/vmdev/Tiggreee/AccelToolReloaded" alt="Vista previa del repositorio AccelToolReloaded" loading="lazy" />
+                <div class="hero-shot__meta">
+                  <span>AccelToolReloaded</span>
+                  <span>GitHub</span>
+                </div>
+              </a>
+              <a class="hero-shot hero-shot--logo hero-shot--link" href="https://github.com/Tiggreee/web_project_around_auth" target="_blank" rel="noopener">
+                <img src="https://opengraph.githubassets.com/vmdev/Tiggreee/web_project_around_auth" alt="Vista previa del repositorio web_project_around_auth" loading="lazy" />
+                <div class="hero-shot__meta">
+                  <span>Around Auth</span>
+                  <span>GitHub</span>
+                </div>
+              </a>
             </div>
           </div>
           <aside class="hero__right">
@@ -130,8 +161,8 @@
           <div class="chips">
             <button class="chip is-active" data-filter="all">Todos</button>
             <button class="chip" data-filter="full-stack">Full stack</button>
-            <button class="chip" data-filter="ai">IA aplicada</button>
-            <button class="chip" data-filter="embedded">Embedded</button>
+            <button class="chip" data-filter="frontend">Frontend</button>
+            <button class="chip" data-filter="tooling">Tooling</button>
             <button class="chip" data-filter="app">App</button>
           </div>
           <div class="chips chips--period">
@@ -160,24 +191,44 @@
                 <a class="project__link project__link--demo" href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Ver demo</a>
               </div>
             </article>
-            <article class="project" data-project="ai" data-year="2025">
-              <p class="project__meta">IA APLICADA / 2025</p>
-              <h3>AI Lip-Sync Pipeline</h3>
-              <p>Pipeline local para video y sincronizacion labial en produccion rapida.</p>
-              <p class="project__stack">LLM local / Automation / Media pipeline</p>
+            <article class="project" data-project="tooling" data-year="2025">
+              <p class="project__meta">TOOLING / 2025</p>
+              <h3>AccelToolReloaded</h3>
+              <p>Herramienta web enfocada en flujo y productividad para tareas repetitivas.</p>
+              <p class="project__stack">HTML / CSS / JavaScript</p>
               <div class="project__actions">
-                <a class="project__link" href="#contacto">Solicitar demo</a>
-                <span class="project__status">Demo privada</span>
+                <a class="project__link" href="https://github.com/Tiggreee/AccelToolReloaded" target="_blank" rel="noopener">Ver repositorio</a>
+                <a class="project__link project__link--demo" href="https://tiggreee.github.io/AccelToolReloaded/" target="_blank" rel="noopener">Ver demo</a>
               </div>
             </article>
-            <article class="project" data-project="embedded" data-year="2026">
-              <p class="project__meta">EMBEDDED / 2026</p>
-              <h3>ESP32 Telemetry Node</h3>
-              <p>Sensores, telemetria y control remoto conectado a dashboard web.</p>
-              <p class="project__stack">ESP32 / Firmware / API / Dashboard</p>
+            <article class="project" data-project="frontend" data-year="2025">
+              <p class="project__meta">FRONTEND / 2025</p>
+              <h3>Around Auth</h3>
+              <p>Flujos de autenticacion, rutas protegidas y UI de acceso para app web moderna.</p>
+              <p class="project__stack">React / Router / Auth</p>
               <div class="project__actions">
-                <a class="project__link" href="#contacto">Ver caso tecnico</a>
-                <span class="project__status">Prototipo en curso</span>
+                <a class="project__link" href="https://github.com/Tiggreee/web_project_around_auth" target="_blank" rel="noopener">Ver repositorio</a>
+                <span class="project__status">Repositorio publico</span>
+              </div>
+            </article>
+            <article class="project" data-project="app" data-year="2025">
+              <p class="project__meta">APP / 2025</p>
+              <h3>Habit Tracker</h3>
+              <p>Aplicacion para seguimiento de habitos con enfoque en experiencia simple y uso diario.</p>
+              <p class="project__stack">JavaScript / UI / Persistencia</p>
+              <div class="project__actions">
+                <a class="project__link" href="https://github.com/Tiggreee/habit-tracker" target="_blank" rel="noopener">Ver repositorio</a>
+                <span class="project__status">Repositorio publico</span>
+              </div>
+            </article>
+            <article class="project" data-project="full-stack" data-year="2025">
+              <p class="project__meta">FULL STACK / 2025</p>
+              <h3>PawnGO</h3>
+              <p>Proyecto web orientado a operacion de negocio con flujo integral de frontend y backend.</p>
+              <p class="project__stack">Full Stack / API / UI</p>
+              <div class="project__actions">
+                <a class="project__link" href="https://github.com/Tiggreee/PawnGO" target="_blank" rel="noopener">Ver repositorio</a>
+                <span class="project__status">Repositorio publico</span>
               </div>
             </article>
           </div>
@@ -202,11 +253,11 @@
             </article>
             <article class="service-card">
               <h3>Automatizacion con IA</h3>
-              <p>Flujos locales para ahorrar tiempo en tareas repetitivas.</p>
+              <p>Integraciones y automatizaciones web para procesos de negocio.</p>
             </article>
             <article class="service-card">
-              <h3>Sistemas embebidos</h3>
-              <p>ESP32, telemetria y control integrado con software web.</p>
+              <h3>Soporte y mejora continua</h3>
+              <p>Correcciones, optimizacion y evolucion funcional despues del lanzamiento.</p>
             </article>
           </div>
         </div>
@@ -223,23 +274,25 @@
             <article class="lab__item">
               <span class="lab__index">01</span>
               <div>
-                <h3>Automation Lab</h3>
-                <p>Build scripts, QA flow y pipelines internos para entregar mas rapido.</p>
+                <h3>AccelToolReloaded</h3>
+                <p>Herramienta web para acelerar tareas operativas y flujos repetitivos.</p>
                 <a class="project__link project__link--demo" href="https://tiggreee.github.io/AccelToolReloaded/" target="_blank" rel="noopener">Demo activa</a>
               </div>
             </article>
             <article class="lab__item">
               <span class="lab__index">02</span>
               <div>
-                <h3>Media AI Toolkit</h3>
-                <p>Generacion de video, lip-sync y postproceso con tooling local.</p>
+                <h3>Habit Tracker</h3>
+                <p>Aplicacion enfocada en seguimiento de habitos y consistencia diaria.</p>
+                <a class="project__link" href="https://github.com/Tiggreee/habit-tracker" target="_blank" rel="noopener">Ver repositorio</a>
               </div>
             </article>
             <article class="lab__item">
               <span class="lab__index">03</span>
               <div>
-                <h3>Realtime Ops UI</h3>
-                <p>Interfaces para estado, alertas y control en tiempo real.</p>
+                <h3>PawnGO</h3>
+                <p>Proyecto full stack orientado a flujo de negocio y gestion web.</p>
+                <a class="project__link" href="https://github.com/Tiggreee/PawnGO" target="_blank" rel="noopener">Ver repositorio</a>
               </div>
             </article>
           </div>
@@ -295,14 +348,14 @@
               </div>
             </div>
             <div class="stack-grid__box">
-              <h3>Maker / IA</h3>
+              <h3>Web y operación</h3>
               <div class="skills">
-                <span class="skill">LLM local</span>
-                <span class="skill">Video pipeline</span>
-                <span class="skill">Lip-sync</span>
-                <span class="skill">ESP32</span>
                 <span class="skill">Telemetria</span>
                 <span class="skill">Automation</span>
+                <span class="skill">Testing</span>
+                <span class="skill">Deploy</span>
+                <span class="skill">Monitoreo</span>
+                <span class="skill">Mantenimiento</span>
               </div>
             </div>
           </div>
@@ -343,20 +396,20 @@
       <section class="section section--bio-discreet" id="media" data-reveal>
         <div class="container media media--discreet">
           <div class="media__content media__content--quiet">
-            <p class="section__label">BIO / DISCRETO</p>
-            <h2>Victor Manuel Developer</h2>
+            <p class="section__label">IDENTIDAD / CIERRE</p>
+            <h2>vmDev, build-first portfolio</h2>
             <p>
-              Construyo producto funcional con enfoque técnico y criterio de operación.
-              Este bloque queda al final para cerrar con identidad visual y contexto personal.
+              Enfoque full stack orientado a producto real, ejecución rápida y criterio técnico.
+              Cierre visual pensado como pieza editorial de marca.
             </p>
             <div class="media__logos media__logos--end">
-              <img src="assets/vmDev_Icon_64.png" alt="Icono vmDev 64" loading="lazy" />
-              <img src="assets/vmDev_Web_Banner.png" alt="Banner vmDev" loading="lazy" />
+              <img class="media__logo-main" src="assets/vmdev_header_logo.png" alt="Logo principal vmDev" loading="lazy" />
+              <img class="media__logo-badge" src="assets/vmdev_favicon_64.png" alt="Isotipo vmDev" loading="lazy" />
+              <img class="media__logo-badge" src="assets/vmdev_logo_variant_2.png" alt="Variante de logo vmDev" loading="lazy" />
             </div>
           </div>
           <div class="media__visual media__visual--bio-final">
-            <img class="media__hero-logo" src="assets/vmDev_HighRes_Brackets.png" alt="Logo arquitectural vmDev" loading="lazy" />
-            <img class="media__avatar" src="assets/1000046563.jpg" alt="Victor vmDev" loading="lazy" />
+            <img class="media__hero-logo" src="assets/my_vmDev_logo.png" alt="Logo vmDev" loading="lazy" />
           </div>
         </div>
       </section>
@@ -364,7 +417,7 @@
 
     <footer class="footer">
       <p>vmDev Portfolio</p>
-      <p>Creative engineering aplicado a productos reales</p>
+      <p>Desarrollo web full stack aplicado a productos reales</p>
     </footer>
 
     <div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
