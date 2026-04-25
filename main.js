@@ -16,6 +16,7 @@ const bookTriggers = document.querySelectorAll('[data-book-trigger]');
 const bookPanels = document.querySelectorAll('[data-book-panel]');
 const copyEmailButtons = document.querySelectorAll('[data-copy-email]');
 const scrollProgressBar = document.querySelector('[data-scroll-progress]');
+const keyedLogos = document.querySelectorAll('img[data-alpha-key]');
 const contactSubmitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let toastTimer = null;
@@ -24,6 +25,81 @@ let activeCategory = 'all';
 let activePeriod = 'all';
 
 const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
+const cleanLogoBackground = (image) => {
+  if (!image || image.dataset.alphaApplied === 'true') {
+    return;
+  }
+
+  const mode = image.dataset.alphaKey || 'dark';
+  const source = image.currentSrc || image.src;
+  if (!source || source.startsWith('data:')) {
+    return;
+  }
+
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d', { willReadFrequently: true });
+  if (!context) {
+    return;
+  }
+
+  const width = image.naturalWidth;
+  const height = image.naturalHeight;
+  if (!width || !height) {
+    return;
+  }
+
+  canvas.width = width;
+  canvas.height = height;
+  context.drawImage(image, 0, 0, width, height);
+
+  const frame = context.getImageData(0, 0, width, height);
+  const pixels = frame.data;
+
+  for (let index = 0; index < pixels.length; index += 4) {
+    const red = pixels[index];
+    const green = pixels[index + 1];
+    const blue = pixels[index + 2];
+
+    const max = Math.max(red, green, blue);
+    const min = Math.min(red, green, blue);
+    const range = max - min;
+    const isGray = range < 20;
+
+    if (mode === 'black') {
+      if (max < 62 || (isGray && max < 78)) {
+        pixels[index + 3] = 0;
+      }
+      continue;
+    }
+
+    if (mode === 'checker') {
+      if (isGray && max > 86 && max < 232) {
+        pixels[index + 3] = 0;
+      }
+      continue;
+    }
+
+    if ((max < 40 && isGray) || (max < 58 && green < 70 && blue < 80)) {
+      pixels[index + 3] = 0;
+    }
+  }
+
+  context.putImageData(frame, 0, 0);
+  image.src = canvas.toDataURL('image/png');
+  image.dataset.alphaApplied = 'true';
+};
+
+const applyLogoCleanup = () => {
+  keyedLogos.forEach((image) => {
+    if (image.complete) {
+      cleanLogoBackground(image);
+      return;
+    }
+
+    image.addEventListener('load', () => cleanLogoBackground(image), { once: true });
+  });
+};
 
 const showToast = (message, type = 'success') => {
   if (!toast) {
@@ -325,6 +401,8 @@ const updateScrollProgress = () => {
   const progress = Math.min((window.scrollY / maxScroll) * 100, 100);
   scrollProgressBar.style.width = `${progress}%`;
 };
+
+applyLogoCleanup();
 
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();

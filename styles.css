@@ -1,17 +1,17 @@
 :root {
-  --bg: #04070d;
-  --bg-soft: #0a1320;
-  --panel: rgba(13, 22, 35, 0.78);
-  --panel-strong: #0f1a29;
-  --stroke: rgba(156, 189, 219, 0.2);
-  --stroke-strong: rgba(156, 189, 219, 0.4);
-  --ink: #edf7ff;
-  --muted: #7f98ae;
-  --accent: #20e0c2;
-  --accent-2: #ff8a57;
+  --bg: #03060b;
+  --bg-soft: #0c141f;
+  --panel: rgba(11, 19, 30, 0.78);
+  --panel-strong: #121d2b;
+  --stroke: rgba(132, 155, 180, 0.22);
+  --stroke-strong: rgba(166, 198, 228, 0.44);
+  --ink: #e8f4ff;
+  --muted: #8d9fb5;
+  --accent: #43d4ff;
+  --accent-2: #9cf85b;
   --danger: #ff6456;
-  --glow-a: rgba(32, 224, 194, 0.22);
-  --glow-b: rgba(255, 138, 87, 0.22);
+  --glow-a: rgba(67, 212, 255, 0.24);
+  --glow-b: rgba(156, 248, 91, 0.24);
   --max: 1180px;
 }
 
@@ -27,12 +27,12 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: "Bahnschrift", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+  font-family: "Eurostile", "Bahnschrift", "Agency FB", "Segoe UI Variable", sans-serif;
   background:
-    radial-gradient(circle at 8% 6%, rgba(32, 224, 194, 0.16), transparent 35%),
-    radial-gradient(circle at 94% 8%, rgba(255, 138, 87, 0.18), transparent 30%),
-    radial-gradient(circle at 64% 88%, rgba(32, 224, 194, 0.08), transparent 40%),
-    linear-gradient(168deg, #04070d 0%, #09111b 44%, #0a1420 100%);
+    radial-gradient(circle at 12% 4%, rgba(67, 212, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 90% 10%, rgba(156, 248, 91, 0.16), transparent 28%),
+    radial-gradient(circle at 70% 86%, rgba(67, 212, 255, 0.1), transparent 40%),
+    linear-gradient(166deg, #03060b 0%, #09111a 46%, #0b1520 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -48,8 +48,8 @@ body::after {
 
 body::before {
   background:
-    conic-gradient(from 36deg at 84% 14%, rgba(32, 224, 194, 0.2), transparent 30%),
-    conic-gradient(from 148deg at 10% 86%, rgba(255, 138, 87, 0.18), transparent 38%);
+    conic-gradient(from 36deg at 84% 14%, rgba(67, 212, 255, 0.22), transparent 30%),
+    conic-gradient(from 146deg at 12% 84%, rgba(156, 248, 91, 0.16), transparent 38%);
   filter: blur(62px);
 }
 
@@ -59,7 +59,7 @@ body::after {
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 34px 34px;
   mask-image: radial-gradient(circle at center, #000 45%, transparent 92%);
-  opacity: 0.52;
+  opacity: 0.44;
 }
 
 body.modal-open {
@@ -96,8 +96,8 @@ body.modal-open {
   justify-content: space-between;
   gap: 12px;
   background:
-    linear-gradient(140deg, rgba(32, 224, 194, 0.1), transparent 48%),
-    linear-gradient(170deg, rgba(255, 138, 87, 0.08), transparent 54%),
+    linear-gradient(140deg, rgba(67, 212, 255, 0.12), transparent 48%),
+    linear-gradient(170deg, rgba(156, 248, 91, 0.08), transparent 54%),
     rgba(5, 10, 16, 0.86);
   backdrop-filter: blur(16px);
   box-shadow: 0 20px 36px rgba(0, 0, 0, 0.42);
@@ -119,7 +119,7 @@ body.modal-open {
   display: block;
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, var(--accent), #78f0dd 45%, var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), #8ce7ff 45%, var(--accent-2));
 }
 
 .brand {
@@ -129,10 +129,10 @@ body.modal-open {
 }
 
 .brand__logo {
-  height: 40px;
+  height: 44px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 0 0 rgba(25, 227, 195, 0));
+  filter: drop-shadow(0 0 0 rgba(67, 212, 255, 0));
   transition: transform 0.22s ease, filter 0.22s ease;
 }
 
@@ -142,7 +142,7 @@ body.modal-open {
 
 .brand:hover .brand__logo {
   transform: translateY(-1px) scale(1.01);
-  filter: drop-shadow(0 0 10px rgba(25, 227, 195, 0.4));
+  filter: drop-shadow(0 0 12px rgba(67, 212, 255, 0.45));
 }
 
 .nav {
@@ -237,8 +237,8 @@ body.modal-open {
   border: 1px solid var(--stroke);
   border-radius: 22px;
   background:
-    radial-gradient(circle at 82% 16%, rgba(255, 138, 87, 0.14), transparent 34%),
-    linear-gradient(140deg, rgba(32, 224, 194, 0.12), transparent 50%),
+    radial-gradient(circle at 82% 16%, rgba(156, 248, 91, 0.13), transparent 34%),
+    linear-gradient(140deg, rgba(67, 212, 255, 0.14), transparent 50%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
     var(--panel);
   box-shadow:
@@ -254,7 +254,7 @@ body.modal-open {
 .kicker {
   margin: 0 0 14px;
   text-transform: uppercase;
-  color: #ffd1bf;
+  color: #c8ecff;
   letter-spacing: 1.7px;
   font-size: 11px;
   font-weight: 700;
@@ -333,7 +333,7 @@ body.modal-open {
   border-radius: 14px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(160deg, rgba(25, 227, 195, 0.12), rgba(255, 122, 69, 0.08));
+  background: linear-gradient(160deg, rgba(67, 212, 255, 0.12), rgba(156, 248, 91, 0.08));
   transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
@@ -454,7 +454,7 @@ body.modal-open {
 
 .section__label {
   margin: 0;
-  color: #ffc9b5;
+  color: #c4e9ff;
   text-transform: uppercase;
   letter-spacing: 2.2px;
   font-size: 11px;
@@ -534,7 +534,7 @@ body.modal-open {
 
 .project__meta {
   margin: 0;
-  color: #ffd0bb;
+  color: #c7ebff;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
@@ -552,10 +552,77 @@ body.modal-open {
   line-height: 1.55;
 }
 
-.project__stack {
+.project__impact {
   margin-top: 10px;
-  color: #d4e4ef;
+  padding-left: 10px;
+  border-left: 2px solid rgba(67, 212, 255, 0.5);
+  color: #cce7f8;
+  font-size: 13px;
+}
+
+.project__stack {
+  margin-top: 8px;
+  color: #d8ebfa;
   font-size: 12px;
+}
+
+.section--logos {
+  padding-top: 52px;
+  padding-bottom: 34px;
+}
+
+.section__head--compact h2 {
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.logo-wall {
+  border: 1px solid var(--stroke);
+  border-radius: 24px;
+  padding: clamp(18px, 3vw, 30px);
+  background:
+    radial-gradient(circle at 82% 16%, rgba(67, 212, 255, 0.13), transparent 34%),
+    radial-gradient(circle at 8% 90%, rgba(156, 248, 91, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent),
+    rgba(9, 17, 27, 0.8);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 34px rgba(0, 0, 0, 0.36);
+}
+
+.logo-wall__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.logo-card {
+  margin: 0;
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  min-height: 126px;
+  background:
+    linear-gradient(158deg, rgba(67, 212, 255, 0.08), rgba(156, 248, 91, 0.06)),
+    rgba(6, 12, 20, 0.86);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.logo-card img {
+  width: 100%;
+  max-width: 230px;
+  max-height: 94px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(4, 8, 14, 0.55));
+}
+
+.logo-card--wide {
+  grid-column: span 2;
+}
+
+.logo-card--mono img {
+  max-height: 108px;
 }
 
 .project__actions {
@@ -676,7 +743,7 @@ body.modal-open {
   border-radius: 12px;
   width: 50px;
   min-height: 170px;
-  background: linear-gradient(180deg, #1f2d3b, #101925);
+  background: linear-gradient(180deg, #1a2a3a, #101a27);
   color: var(--muted);
   font-size: 11px;
   letter-spacing: 1px;
@@ -744,7 +811,7 @@ body.modal-open {
   border-radius: 999px;
   border: 1px solid var(--stroke);
   font-size: 12px;
-  color: #c4d4e2;
+  color: #c7d9eb;
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -776,7 +843,7 @@ body.modal-open {
   padding-left: 18px;
   display: grid;
   gap: 6px;
-  color: #d3e2ee;
+  color: #d0e4f4;
 }
 
 .copy-mail {
@@ -868,9 +935,9 @@ textarea.input {
 }
 
 .button--primary {
-  background: linear-gradient(120deg, #10c9ad, #3de2c7 56%, #78f0de);
-  border-color: #39dbc1;
-  color: #042d27;
+  background: linear-gradient(120deg, #45d3ff, #8be6ff 54%, #9df85d);
+  border-color: #80e4ff;
+  color: #06232a;
 }
 
 .button--primary:hover {
@@ -921,7 +988,7 @@ textarea.input {
 
 .media__content--quiet {
   background:
-    linear-gradient(160deg, rgba(25, 227, 195, 0.07), transparent 45%),
+    linear-gradient(160deg, rgba(67, 212, 255, 0.08), transparent 45%),
     var(--panel);
 }
 
@@ -985,8 +1052,8 @@ textarea.input {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 18%, rgba(32, 224, 194, 0.18), transparent 38%),
-    radial-gradient(circle at 84% 82%, rgba(255, 138, 87, 0.14), transparent 42%),
+    radial-gradient(circle at 18% 18%, rgba(67, 212, 255, 0.18), transparent 38%),
+    radial-gradient(circle at 84% 82%, rgba(156, 248, 91, 0.14), transparent 42%),
     linear-gradient(165deg, rgba(9, 17, 28, 0.9), rgba(8, 15, 24, 0.86));
 }
 
@@ -1064,8 +1131,8 @@ textarea.input {
   right: 16px;
   bottom: 16px;
   z-index: 80;
-  background: linear-gradient(120deg, var(--accent), #66f0da);
-  color: #07342d;
+  background: linear-gradient(120deg, var(--accent), #8ae8ff 56%, var(--accent-2));
+  color: #04242b;
   padding: 9px 14px;
   border-radius: 999px;
   font-size: 11px;
@@ -1128,6 +1195,10 @@ textarea.input {
     grid-template-columns: 1fr;
   }
 
+  .logo-wall__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .shelf {
     grid-template-columns: 1fr;
   }
@@ -1172,7 +1243,7 @@ textarea.input {
   }
 
   .brand__logo {
-    height: 33px;
+    height: 36px;
   }
 
   .section {
@@ -1204,6 +1275,14 @@ textarea.input {
   .hero__showcase {
     grid-template-columns: 1fr;
     grid-auto-rows: 160px;
+  }
+
+  .logo-wall__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-card--wide {
+    grid-column: auto;
   }
 
   .lab__item {
