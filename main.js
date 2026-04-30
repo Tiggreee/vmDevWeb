@@ -16,6 +16,9 @@ const bookTriggers = document.querySelectorAll('[data-book-trigger]');
 const bookPanels = document.querySelectorAll('[data-book-panel]');
 const copyEmailButtons = document.querySelectorAll('[data-copy-email]');
 const scrollProgressBar = document.querySelector('[data-scroll-progress]');
+const megaRoot = document.querySelector('[data-mega-root]');
+const megaTriggers = document.querySelectorAll('[data-mega-trigger]');
+const megaPanels = document.querySelectorAll('[data-mega-panel]');
 const keyedLogos = document.querySelectorAll('img[data-alpha-key]');
 const contactSubmitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -23,6 +26,8 @@ let toastTimer = null;
 let lastFocusedElement = null;
 let activeCategory = 'all';
 let activePeriod = 'all';
+let parallaxRaf = null;
+let activeMega = null;
 
 const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
@@ -232,8 +237,48 @@ const closeModal = () => {
   }
 };
 
+const closeMegaMenu = () => {
+  if (!megaRoot) {
+    return;
+  }
+
+  megaRoot.classList.remove('is-open');
+  megaRoot.setAttribute('aria-hidden', 'true');
+  megaTriggers.forEach((trigger) => trigger.classList.remove('is-open'));
+  megaPanels.forEach((panel) => panel.classList.remove('is-open'));
+  activeMega = null;
+};
+
+const openMegaMenu = (target) => {
+  if (!megaRoot || !target) {
+    return;
+  }
+
+  megaRoot.classList.add('is-open');
+  megaRoot.setAttribute('aria-hidden', 'false');
+  megaTriggers.forEach((trigger) => trigger.classList.toggle('is-open', trigger.dataset.megaTrigger === target));
+  megaPanels.forEach((panel) => panel.classList.toggle('is-open', panel.dataset.megaPanel === target));
+  activeMega = target;
+};
+
 openButtons.forEach((btn) => btn.addEventListener('click', openModal));
 closeButtons.forEach((btn) => btn.addEventListener('click', closeModal));
+
+megaTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const target = trigger.dataset.megaTrigger;
+    if (!target) {
+      return;
+    }
+
+    if (activeMega === target) {
+      closeMegaMenu();
+      return;
+    }
+
+    openMegaMenu(target);
+  });
+});
 
 chips.forEach((chip) => {
   chip.addEventListener('click', () => {
@@ -312,6 +357,10 @@ navLinks.forEach((link) => {
 });
 
 window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeMegaMenu();
+  }
+
   if ((event.key === 'k' || event.key === 'K') && !modal?.classList.contains('is-open')) {
     const target = event.target;
     const isTypingTarget = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA');
@@ -349,6 +398,19 @@ window.addEventListener('keydown', (event) => {
   } else if (!event.shiftKey && document.activeElement === last) {
     event.preventDefault();
     first.focus();
+  }
+});
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  if (!target) {
+    return;
+  }
+
+  const insideMega = target.closest('[data-mega-root]');
+  const insideTrigger = target.closest('[data-mega-trigger]');
+  if (!insideMega && !insideTrigger) {
+    closeMegaMenu();
   }
 });
 
@@ -402,10 +464,28 @@ const updateScrollProgress = () => {
   scrollProgressBar.style.width = `${progress}%`;
 };
 
+const applyScrollDepth = () => {
+  document.documentElement.style.setProperty('--scroll-depth', `${window.scrollY}px`);
+};
+
+const handleScrollEffects = () => {
+  if (parallaxRaf) {
+    return;
+  }
+
+  parallaxRaf = window.requestAnimationFrame(() => {
+    updateScrollProgress();
+    if (!prefersReducedMotion) {
+      applyScrollDepth();
+    }
+    parallaxRaf = null;
+  });
+};
+
 applyLogoCleanup();
 
-window.addEventListener('scroll', updateScrollProgress, { passive: true });
-updateScrollProgress();
+window.addEventListener('scroll', handleScrollEffects, { passive: true });
+handleScrollEffects();
 applyProjectFilters();
 
 if (contactForm) {

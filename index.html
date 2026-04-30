@@ -55,20 +55,77 @@
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
-    <header class="topbar">
-      <a class="brand" href="#inicio" aria-label="vmDev inicio">
-        <img class="brand__logo" src="assets/1sstlogo.png" alt="Logo vmDev" />
-      </a>
-      <nav class="nav">
-        <a class="nav__link" href="#inicio">Inicio</a>
-        <a class="nav__link" href="#proyectos">Proyectos</a>
-        <a class="nav__link" href="#servicios">Servicios</a>
-        <a class="nav__link" href="#apps">Lab</a>
-        <a class="nav__link" href="#biblioteca">Biblioteca</a>
-        <a class="nav__link" href="#skills">Stack</a>
-        <a class="nav__link" href="#contacto">Contacto</a>
-      </nav>
-      <button class="button button--ghost" data-open="modal">Agenda</button>
+    <header class="topbar topbar--commerce">
+      <div class="topbar__promo">Build systems that ship. Agenda una sesion tecnica esta semana.</div>
+      <div class="topbar__main">
+        <a class="brand" href="#inicio" aria-label="vmDev inicio">
+          <img class="brand__logo" src="assets/1sstlogo.png" alt="Logo vmDev" />
+        </a>
+        <nav class="nav nav--commerce" aria-label="Menu principal">
+          <button class="nav__trigger" type="button" data-mega-trigger="proyectos">Proyectos</button>
+          <button class="nav__trigger" type="button" data-mega-trigger="servicios">Servicios</button>
+          <button class="nav__trigger" type="button" data-mega-trigger="lab">Lab</button>
+          <button class="nav__trigger" type="button" data-mega-trigger="stack">Stack</button>
+        </nav>
+        <div class="topbar__actions">
+          <a class="nav__link nav__link--inline" href="#contacto">Contacto</a>
+          <button class="button button--ghost" data-open="modal">Agenda</button>
+        </div>
+      </div>
+      <div class="mega-menu" data-mega-root aria-hidden="true">
+        <section class="mega-menu__panel" data-mega-panel="proyectos">
+          <div class="mega-menu__col">
+            <h3>Casos reales</h3>
+            <a href="#proyectos" class="mega-menu__link">Ver todos los proyectos</a>
+            <a href="https://github.com/Tiggreee/FacturAutentico" class="mega-menu__link" target="_blank" rel="noopener">FacturAutentico</a>
+            <a href="https://github.com/Tiggreee/sentrylog" class="mega-menu__link" target="_blank" rel="noopener">Sentrylog</a>
+            <a href="https://github.com/Tiggreee/Webqualizer" class="mega-menu__link" target="_blank" rel="noopener">Webqualizer</a>
+          </div>
+          <div class="mega-menu__col">
+            <h3>Entrega</h3>
+            <p>Frontend, backend, API y despliegue con criterio de operacion real.</p>
+          </div>
+        </section>
+        <section class="mega-menu__panel" data-mega-panel="servicios">
+          <div class="mega-menu__col">
+            <h3>Servicios</h3>
+            <a href="#servicios" class="mega-menu__link">Arquitectura de producto</a>
+            <a href="#servicios" class="mega-menu__link">Full stack delivery</a>
+            <a href="#servicios" class="mega-menu__link">Automatizacion con IA</a>
+            <a href="#servicios" class="mega-menu__link">Soporte y mejora continua</a>
+          </div>
+          <div class="mega-menu__col">
+            <h3>Formato</h3>
+            <p>Sprints cortos, evidencia funcional, decision tecnica clara y trazable.</p>
+          </div>
+        </section>
+        <section class="mega-menu__panel" data-mega-panel="lab">
+          <div class="mega-menu__col">
+            <h3>Lab actual</h3>
+            <a href="#apps" class="mega-menu__link">Webqualizer</a>
+            <a href="#apps" class="mega-menu__link">FacturAutentico</a>
+            <a href="#apps" class="mega-menu__link">TripleIApp</a>
+          </div>
+          <div class="mega-menu__col">
+            <h3>Objetivo</h3>
+            <p>Experimentar rapido y convertir hallazgos en producto aplicable.</p>
+          </div>
+        </section>
+        <section class="mega-menu__panel" data-mega-panel="stack">
+          <div class="mega-menu__col">
+            <h3>Core stack</h3>
+            <a href="#skills" class="mega-menu__link">React / Node / PostgreSQL</a>
+            <a href="#skills" class="mega-menu__link">APIs / Auth / Deploy</a>
+            <a href="#skills" class="mega-menu__link">Testing / Automation</a>
+          </div>
+          <div class="mega-menu__col">
+            <h3>Ruta rapida</h3>
+            <a href="#inicio" class="mega-menu__link">Inicio</a>
+            <a href="#proyectos" class="mega-menu__link">Portfolio</a>
+            <a href="#contacto" class="mega-menu__link">Contactar</a>
+          </div>
+        </section>
+      </div>
     </header>
     <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
@@ -378,12 +435,8 @@
             <ul class="contact__list">
               <li>LinkedIn: @tiggreee</li>
               <li>
-                notlikeiusedto@gmail.com
-                <button class="copy-mail" type="button" data-copy-email="notlikeiusedto@gmail.com">Copiar</button>
-              </li>
-              <li>
-                victorinox51631@hotmail.com
-                <button class="copy-mail" type="button" data-copy-email="victorinox51631@hotmail.com">Copiar</button>
+                tiggreee@vmdev.lat
+                <button class="copy-mail" type="button" data-copy-email="tiggreee@vmdev.lat">Copiar</button>
               </li>
             </ul>
           </div>
