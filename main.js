@@ -166,13 +166,13 @@ if (contactForm) {
     });
 
     if (hasError) {
-      showToast('Please complete required fields', 'error');
+      showToast('Completa los campos obligatorios', 'error');
       return;
     }
 
     const botField = contactForm.querySelector('input[name="website"]');
     if (botField && botField.value.trim() !== '') {
-      showToast('Form submission blocked', 'error');
+      showToast('Envio bloqueado', 'error');
       return;
     }
 
@@ -183,26 +183,26 @@ if (contactForm) {
     };
 
     if (!isValidContactPayload(payload)) {
-      showToast('Please review field formats', 'error');
+      showToast('Revisa el formato de los campos', 'error');
       return;
     }
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+      submitButton.textContent = 'Enviando...';
     }
 
     const deliveredByApi = await sendContactToApi(payload);
 
     if (submitButton) {
       submitButton.disabled = false;
-      submitButton.textContent = 'Send message';
+      submitButton.textContent = 'Enviar mensaje';
     }
 
     if (deliveredByApi) {
       contactForm.reset();
-      showToast('Message received.');
+      showToast('Mensaje recibido.');
       return;
     }
 
@@ -210,6 +210,6 @@ if (contactForm) {
     const body = encodeURIComponent(`Name: ${payload.nombre}\nEmail: ${payload.email}\n\nMessage:\n${payload.idea}`);
     window.location.href = `mailto:tiggreee@vmdev.lat?subject=${subject}&body=${body}`;
     contactForm.reset();
-    showToast('Email app opened to continue.');
+    showToast('Se abrio tu app de correo.');
   });
 }
