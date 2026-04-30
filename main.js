@@ -206,8 +206,8 @@ if (contactForm) {
       return;
     }
 
-    const subject = encodeURIComponent(`Nuevo contacto portfolio - ${payload.nombre}`);
-    const body = encodeURIComponent(`Nombre: ${payload.nombre}\nEmail: ${payload.email}\n\nMensaje:\n${payload.idea}`);
+    const subject = encodeURIComponent(`New portfolio contact - ${payload.nombre}`);
+    const body = encodeURIComponent(`Name: ${payload.nombre}\nEmail: ${payload.email}\n\nMessage:\n${payload.idea}`);
     window.location.href = `mailto:tiggreee@vmdev.lat?subject=${subject}&body=${body}`;
     contactForm.reset();
     showToast('Email app opened to continue.');
