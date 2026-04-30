@@ -4,6 +4,7 @@ const scrollLinks = document.querySelectorAll('a[href^="#"]');
 const scrollSections = document.querySelectorAll('main section[id]');
 const contactForm = document.querySelector('[data-contact]');
 const toast = document.querySelector('[data-toast]');
+const heroContent = document.querySelector('.hero__content');
 
 let toastTimer = null;
 
@@ -33,6 +34,24 @@ if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
+
+const syncHeaderState = () => {
+  const header = document.querySelector('.site-header');
+  if (!header) {
+    return;
+  }
+
+  header.classList.toggle('is-scrolled', window.scrollY > 16);
+};
+
+syncHeaderState();
+window.addEventListener('scroll', syncHeaderState, { passive: true });
+
+if (heroContent) {
+  requestAnimationFrame(() => {
+    heroContent.classList.add('is-ready');
   });
 }
 
@@ -81,6 +100,19 @@ if ('IntersectionObserver' in window) {
   );
 
   scrollSections.forEach((section) => observer.observe(section));
+}
+
+if (contactForm) {
+  const firstInput = contactForm.querySelector('input[name="nombre"]');
+  const section = document.querySelector('#contacto');
+  if (firstInput && section) {
+    section.addEventListener('click', (event) => {
+      if (event.target.closest('.contact-form')) {
+        return;
+      }
+      firstInput.focus();
+    });
+  }
 }
 
 const isValidContactPayload = ({ nombre, email, idea }) => {
@@ -134,13 +166,13 @@ if (contactForm) {
     });
 
     if (hasError) {
-      showToast('Completa los campos requeridos', 'error');
+      showToast('Please complete required fields', 'error');
       return;
     }
 
     const botField = contactForm.querySelector('input[name="website"]');
     if (botField && botField.value.trim() !== '') {
-      showToast('No se pudo enviar el formulario', 'error');
+      showToast('Form submission blocked', 'error');
       return;
     }
 
@@ -151,26 +183,26 @@ if (contactForm) {
     };
 
     if (!isValidContactPayload(payload)) {
-      showToast('Revisa el formato de los campos', 'error');
+      showToast('Please review field formats', 'error');
       return;
     }
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = 'Enviando...';
+      submitButton.textContent = 'Sending...';
     }
 
     const deliveredByApi = await sendContactToApi(payload);
 
     if (submitButton) {
       submitButton.disabled = false;
-      submitButton.textContent = 'Enviar mensaje';
+      submitButton.textContent = 'Send message';
     }
 
     if (deliveredByApi) {
       contactForm.reset();
-      showToast('Mensaje enviado. Gracias por contactar.');
+      showToast('Message received.');
       return;
     }
 
@@ -178,6 +210,6 @@ if (contactForm) {
     const body = encodeURIComponent(`Nombre: ${payload.nombre}\nEmail: ${payload.email}\n\nMensaje:\n${payload.idea}`);
     window.location.href = `mailto:tiggreee@vmdev.lat?subject=${subject}&body=${body}`;
     contactForm.reset();
-    showToast('Se abrio tu cliente de correo.');
+    showToast('Email app opened to continue.');
   });
 }

@@ -8,6 +8,8 @@ const { Pool } = require('pg');
 const app = express();
 
 const PORT = Number(process.env.PORT || 8787);
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const IS_PROD = NODE_ENV === 'production';
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '')
   .split(',')
   .map((value) => value.trim())
@@ -18,16 +20,30 @@ if (!DATABASE_URL) {
   throw new Error('Falta DATABASE_URL en variables de entorno');
 }
 
+const isLocalDb = DATABASE_URL.includes('localhost') || DATABASE_URL.includes('127.0.0.1');
+const DISABLE_SSL_VERIFY = process.env.PGSSL_DISABLE_VERIFY === 'true';
+
 const pool = new Pool({
   connectionString: DATABASE_URL,
-  ssl: DATABASE_URL.includes('localhost') || DATABASE_URL.includes('127.0.0.1')
+  ssl: isLocalDb
     ? false
-    : { rejectUnauthorized: false }
+    : {
+        rejectUnauthorized: !DISABLE_SSL_VERIFY
+      }
 });
+
+if (IS_PROD && ALLOWED_ORIGINS.length === 0) {
+  throw new Error('Falta ALLOWED_ORIGINS en entorno de produccion');
+}
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || ALLOWED_ORIGINS.length === 0 || ALLOWED_ORIGINS.includes(origin)) {
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+
+    if (ALLOWED_ORIGINS.includes(origin)) {
       callback(null, true);
       return;
     }

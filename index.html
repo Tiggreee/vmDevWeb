@@ -1,19 +1,13 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portafolio de Victor (vmDev): desarrollo web full stack orientado a resultados, rendimiento y experiencia de producto."
-    />
+    <meta name="description" content="Victor Salgado (vmDev) - Full Stack Developer portfolio focused on product delivery and reliable systems." />
     <meta name="theme-color" content="#0d1117" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="vmDev | Full Stack Developer" />
-    <meta
-      property="og:description"
-      content="Construyo productos web con impacto real: frontend sólido, backend mantenible y despliegue listo para producción."
-    />
+    <meta property="og:description" content="Frontend and backend case studies focused on business impact and production reliability." />
     <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/1sstlogo.png" />
     <title>vmDev | Full Stack Developer</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/2ndlogo.png" />
@@ -21,6 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Inicio vmDev">
         <img src="assets/1sstlogo.png" alt="Logo vmDev" />
@@ -28,108 +23,108 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
         Menu
       </button>
-      <nav class="main-nav" id="main-nav" data-nav>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#valor">Valor</a>
+      <nav class="main-nav" id="main-nav" data-nav aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#value">Value</a>
         <a href="#stack">Stack</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#historia">Historia</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#process">Process</a>
+        <a href="#story">Story</a>
+        <a href="#contact">Contact</a>
         <a class="button button--ghost" href="https://github.com/Tiggreee" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero" id="inicio">
+    <main id="content">
+      <section class="hero" id="home">
         <video class="hero__video" autoplay muted loop playsinline poster="assets/logotab2.png">
           <source src="https://cdn.coverr.co/videos/coverr-man-working-on-a-laptop-1570/1080p.mp4" type="video/mp4" />
         </video>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content container">
-          <p class="eyebrow">FULL STACK DEVELOPER · PRODUCT THINKING · DELIVERY</p>
-          <h1>Diseño y construyo productos web que sí ayudan a conseguir resultados de negocio.</h1>
+          <p class="eyebrow">FULL STACK DEVELOPER · OPEN TO US ROLES</p>
+          <h1>I build clear, reliable web products that teams can ship with confidence.</h1>
           <p class="hero__lead">
-            Soy Victor (vmDev). Conecto estrategia, UX y arquitectura técnica para entregar software usable, mantenible
-            y listo para escalar.
+            I am Victor Salgado (vmDev), a full stack developer focused on product execution, maintainable architecture,
+            and measurable outcomes.
           </p>
           <div class="hero__actions">
-            <a class="button button--solid" href="#proyectos">Ver casos</a>
-            <a class="button button--ghost-light" href="#contacto">Agendar entrevista</a>
-            <a class="button button--ghost-light" href="https://github.com/Tiggreee" target="_blank" rel="noopener">Descargar CV</a>
+            <a class="button button--solid" href="#projects">View case studies</a>
+            <a class="button button--ghost-light" href="#contact">Book an interview</a>
+            <a class="button button--ghost-light" href="https://github.com/Tiggreee" target="_blank" rel="noopener">GitHub</a>
           </div>
-          <ul class="hero__metrics" aria-label="Resultados clave">
-            <li><strong>8+</strong><span>sistemas lanzados</span></li>
-            <li><strong>4</strong><span>industrias trabajadas</span></li>
-            <li><strong>24/7</strong><span>ownership técnico</span></li>
+          <ul class="hero__metrics" aria-label="Core capabilities">
+            <li><strong>Frontend + Backend</strong><span>End-to-end product delivery</span></li>
+            <li><strong>APIs + Data</strong><span>Reliable integrations and persistence</span></li>
+            <li><strong>US-ready collaboration</strong><span>Remote-first communication and ownership</span></li>
           </ul>
         </div>
       </section>
 
-      <section class="section container" id="proyectos">
+      <section class="section container" id="projects">
         <div class="section__head">
-          <p class="eyebrow">PROYECTOS DESTACADOS</p>
-          <h2>Casos reales con foco en impacto</h2>
+          <p class="eyebrow">FEATURED PROJECTS</p>
+          <h2>Production-minded work with business focus</h2>
         </div>
         <div class="projects-grid">
           <article class="project-card">
-            <p class="project-card__meta">FULL STACK · MONITOREO</p>
+            <p class="project-card__meta">FULL STACK · MONITORING</p>
             <h3>Sentrylog</h3>
-            <p>Plataforma de monitoreo CCTV en tiempo real con alertas y trazabilidad operacional.</p>
+            <p>Real-time CCTV monitoring platform with alerts and event traceability.</p>
             <ul>
-              <li>Frontend React para operación continua.</li>
-              <li>Backend Node + PostgreSQL con eventos en tiempo real.</li>
-              <li>Diseño orientado a reducir tiempo de reacción.</li>
+              <li>React interface for high-uptime operations.</li>
+              <li>Node + PostgreSQL backend with real-time events.</li>
+              <li>Improved response flow for operational incidents.</li>
             </ul>
-            <a href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">Ver repositorio</a>
+            <a href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">View code</a>
           </article>
 
           <article class="project-card">
-            <p class="project-card__meta">APP WEB · FACTURACIÓN</p>
+            <p class="project-card__meta">WEB APP · INVOICING</p>
             <h3>FacturAutentico</h3>
-            <p>Flujo CFDI 4.0 diseñado para minimizar errores y acelerar procesos administrativos.</p>
+            <p>CFDI 4.0 workflow designed to reduce capture errors and accelerate admin operations.</p>
             <ul>
-              <li>UX guiada para captura fiscal.</li>
-              <li>Arquitectura escalable para reglas de negocio.</li>
-              <li>Entrega lista para uso operativo.</li>
+              <li>Guided UX for tax-focused data entry.</li>
+              <li>Scalable architecture for business rules.</li>
+              <li>Operationally ready implementation.</li>
             </ul>
             <div class="project-card__links">
-              <a href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Repositorio</a>
+              <a href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Code</a>
               <a href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Demo</a>
             </div>
           </article>
 
           <article class="project-card">
-            <p class="project-card__meta">TOOLING · FRONTEND INTERACTIVO</p>
+            <p class="project-card__meta">TOOLING · INTERACTIVE FRONTEND</p>
             <h3>Webqualizer</h3>
-            <p>Demo técnica de audio web para explorar interacción, rendimiento y experiencia visual.</p>
+            <p>Web audio interface demo focused on interaction fidelity and performance.</p>
             <ul>
               <li>JavaScript + Web Audio API.</li>
-              <li>Controles en tiempo real con feedback claro.</li>
-              <li>Base útil para productos de media y e-learning.</li>
+              <li>Real-time controls with clear feedback loops.</li>
+              <li>Strong baseline for media-centric interfaces.</li>
             </ul>
-            <a href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">Ver repositorio</a>
+            <a href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">View code</a>
           </article>
         </div>
       </section>
 
-      <section class="section section--alt" id="valor">
+      <section class="section section--alt" id="value">
         <div class="container">
           <div class="section__head">
-            <p class="eyebrow">POR QUÉ CONTRATARME</p>
-            <h2>Value proposition para equipos que quieren ejecutar bien</h2>
+            <p class="eyebrow">WHY HIRE ME</p>
+            <h2>How I contribute to engineering teams</h2>
           </div>
           <div class="value-grid">
             <article>
-              <h3>Pienso en producto</h3>
-              <p>No solo programo features; priorizo impacto, claridad de UX y métricas de negocio.</p>
+              <h3>Product mindset</h3>
+              <p>I prioritize user value, operational clarity, and practical outcomes.</p>
             </article>
             <article>
-              <h3>Entrego end-to-end</h3>
-              <p>Puedo tomar ownership de frontend, backend, modelo de datos, despliegue y refinamiento posterior.</p>
+              <h3>End-to-end ownership</h3>
+              <p>I cover frontend, backend, data, and deployment with continuity.</p>
             </article>
             <article>
-              <h3>Comunico y documento</h3>
-              <p>Decisiones técnicas trazables, trade-offs explícitos y colaboración fluida con equipos multidisciplinarios.</p>
+              <h3>Strong communication</h3>
+              <p>I document decisions clearly and collaborate effectively across teams.</p>
             </article>
           </div>
         </div>
@@ -138,11 +133,10 @@
       <section class="section section--alt" id="stack">
         <div class="container split">
           <div>
-            <p class="eyebrow">STACK & CAPACIDADES</p>
-            <h2>Tecnología alineada con producto</h2>
+            <p class="eyebrow">STACK & CAPABILITIES</p>
+            <h2>Technology choices aligned with delivery</h2>
             <p>
-              Selecciono herramientas por impacto en negocio, velocidad de desarrollo y mantenibilidad del sistema, no
-              por moda.
+              I choose tools based on reliability, delivery speed, and long-term maintenance.
             </p>
           </div>
           <div class="chips">
@@ -153,82 +147,79 @@
         </div>
       </section>
 
-      <section class="section container" id="proceso">
+      <section class="section container" id="process">
         <div class="section__head">
-          <p class="eyebrow">FORMA DE TRABAJO</p>
-          <h2>Cómo convierto ideas en producto real</h2>
+          <p class="eyebrow">WORKFLOW</p>
+          <h2>How I execute projects</h2>
         </div>
         <div class="process">
           <article>
             <h3>01 · Discovery</h3>
-            <p>Entiendo el problema, defino alcance realista y priorizo por valor.</p>
+            <p>Understand constraints, define scope, and prioritize by impact.</p>
           </article>
           <article>
             <h3>02 · Build</h3>
-            <p>Iteraciones cortas con evidencia funcional, feedback continuo y decisiones claras.</p>
+            <p>Build in short iterations with clear checkpoints and feedback.</p>
           </article>
           <article>
             <h3>03 · Launch</h3>
-            <p>Despliegue, monitoreo inicial, hardening y transferencia técnica ordenada.</p>
+            <p>Deploy, observe early behavior, and stabilize quickly.</p>
           </article>
         </div>
       </section>
 
-      <section class="section section--alt" id="historia">
+      <section class="section section--alt" id="story">
         <div class="container split">
           <div>
-            <p class="eyebrow">STORYTELLING PROFESIONAL</p>
-            <h2>Mi enfoque: construir software que funcione en la vida real</h2>
+            <p class="eyebrow">PROFESSIONAL STORY</p>
+            <h2>Execution-first engineering path</h2>
             <p>
-              Mi transición a desarrollo web nace de resolver problemas concretos, no de perseguir “trends”. Trabajo con
-              una mentalidad de producto: entender contexto, reducir fricción y entregar valor medible.
+              I focus on solving concrete business problems with usable, maintainable software.
             </p>
             <p>
-              El objetivo de cada entrega es simple: que el usuario final trabaje mejor y que el negocio tenga una base
-              sólida para crecer.
+              Every release aims to improve operations and leave a stronger technical baseline.
             </p>
           </div>
           <div class="timeline">
             <article>
               <span>2025</span>
-              <h3>Base full stack</h3>
-              <p>Consolidación de frontend + backend + APIs con proyectos funcionales.</p>
+              <h3>Full stack foundation</h3>
+              <p>Consolidated frontend, backend, and API delivery with functional products.</p>
             </article>
             <article>
               <span>2026</span>
-              <h3>Productos con operación real</h3>
-              <p>Enfoque en monitoreo, facturación y sistemas orientados a procesos de negocio.</p>
+              <h3>Operational products</h3>
+              <p>Focused on monitoring, invoicing, and process-oriented systems.</p>
             </article>
             <article>
-              <span>Hoy</span>
-              <h3>Buscando equipo de alto nivel</h3>
-              <p>Quiero aportar en un entorno que valore ejecución, ownership y mejora continua.</p>
+              <span>Now</span>
+              <h3>Open to US opportunities</h3>
+              <p>Available for remote/hybrid frontend or full stack roles.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--contact" id="contacto">
+      <section class="section section--contact" id="contact">
         <div class="container contact-grid">
           <div>
-            <p class="eyebrow">CONTACTO</p>
-            <h2>Si estás contratando, hablemos.</h2>
+            <p class="eyebrow">CONTACT</p>
+            <h2>If you are hiring, let's talk.</h2>
             <p>
-              Busco oportunidades donde pueda aportar en frontend/full stack con ownership, criterio de producto y
-              ejecución sólida.
+              I am available for US-based remote and hybrid roles in frontend or full stack engineering.
             </p>
             <ul class="contact-list">
               <li>Email: <strong>tiggreee@vmdev.lat</strong></li>
               <li>GitHub: <strong>@Tiggreee</strong></li>
-              <li>Disponibilidad: <strong>Inmediata / remota</strong></li>
+              <li>Availability: <strong>Immediate / Remote</strong></li>
             </ul>
           </div>
           <form class="contact-form" data-contact data-api-url="https://api.vmdev.lat/api/contact">
             <input class="input input--hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <input class="input" type="text" name="nombre" placeholder="Nombre" required />
+            <input class="input" type="text" name="nombre" placeholder="Name" required />
             <input class="input" type="email" name="email" placeholder="Email" required />
-            <textarea class="input" name="idea" rows="5" placeholder="Cuéntame del rol o proyecto" required></textarea>
-            <button class="button button--solid" type="submit">Enviar mensaje</button>
+            <textarea class="input" name="idea" rows="5" placeholder="Tell me about the role or project" required></textarea>
+            <button class="button button--solid" type="submit">Send message</button>
           </form>
         </div>
       </section>
@@ -236,10 +227,10 @@
 
     <footer class="footer">
       <p>vmDev · Full Stack Portfolio</p>
-      <p>Construido para comunicar valor y conseguir entrevistas.</p>
+      <p>Built by Victor Salgado (vmDev).</p>
     </footer>
 
-    <div class="toast" data-toast role="status" aria-live="polite">Mensaje enviado</div>
+    <div class="toast" data-toast role="status" aria-live="polite">Done</div>
     <script src="main.js"></script>
   </body>
 </html>
