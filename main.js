@@ -9,6 +9,7 @@ const contactForm = document.querySelector('[data-contact]');
 const toast = document.querySelector('[data-toast]');
 const emptyState = document.querySelector('[data-filter-empty]');
 const navLinks = document.querySelectorAll('.nav__link');
+const sqNavLinks = document.querySelectorAll('.sq-header__nav a[href^="#"]');
 const sections = document.querySelectorAll('main section[id]');
 const revealNodes = document.querySelectorAll('[data-reveal]');
 const projects = document.querySelectorAll('[data-project]');
@@ -19,6 +20,8 @@ const scrollProgressBar = document.querySelector('[data-scroll-progress]');
 const megaRoot = document.querySelector('[data-mega-root]');
 const megaTriggers = document.querySelectorAll('[data-mega-trigger]');
 const megaPanels = document.querySelectorAll('[data-mega-panel]');
+const carouselTrack = document.querySelector('[data-carousel-track]');
+const carouselButtons = document.querySelectorAll('[data-carousel]');
 const keyedLogos = document.querySelectorAll('img[data-alpha-key]');
 const contactSubmitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -28,6 +31,7 @@ let activeCategory = 'all';
 let activePeriod = 'all';
 let parallaxRaf = null;
 let activeMega = null;
+let carouselIndex = 0;
 
 const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
@@ -356,6 +360,60 @@ navLinks.forEach((link) => {
   });
 });
 
+sqNavLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) {
+      return;
+    }
+
+    const target = document.querySelector(href);
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+  });
+});
+
+const getCarouselStep = () => {
+  if (!carouselTrack) {
+    return 0;
+  }
+  const card = carouselTrack.querySelector('.hero-sq__card');
+  if (!card) {
+    return 0;
+  }
+  const gap = 12;
+  return card.getBoundingClientRect().width + gap;
+};
+
+const updateCarousel = () => {
+  if (!carouselTrack) {
+    return;
+  }
+  const step = getCarouselStep();
+  carouselTrack.style.transform = `translateX(${-carouselIndex * step}px)`;
+};
+
+carouselButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    if (!carouselTrack) {
+      return;
+    }
+
+    const cards = carouselTrack.querySelectorAll('.hero-sq__card');
+    const maxIndex = Math.max(cards.length - 2, 0);
+    if (button.dataset.carousel === 'next') {
+      carouselIndex = Math.min(carouselIndex + 1, maxIndex);
+    } else {
+      carouselIndex = Math.max(carouselIndex - 1, 0);
+    }
+    updateCarousel();
+  });
+});
+
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeMegaMenu();
@@ -487,6 +545,9 @@ applyLogoCleanup();
 window.addEventListener('scroll', handleScrollEffects, { passive: true });
 handleScrollEffects();
 applyProjectFilters();
+updateCarousel();
+
+window.addEventListener('resize', updateCarousel);
 
 if (contactForm) {
   contactForm.addEventListener('submit', async (event) => {

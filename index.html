@@ -54,157 +54,49 @@
     </script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <header class="topbar topbar--commerce">
-      <div class="topbar__promo">Build systems that ship. Agenda una sesion tecnica esta semana.</div>
-      <div class="topbar__main">
-        <a class="brand" href="#inicio" aria-label="vmDev inicio">
-          <img class="brand__logo" src="assets/1sstlogo.png" alt="Logo vmDev" />
-        </a>
-        <nav class="nav nav--commerce" aria-label="Menu principal">
-          <button class="nav__trigger" type="button" data-mega-trigger="proyectos">Proyectos</button>
-          <button class="nav__trigger" type="button" data-mega-trigger="servicios">Servicios</button>
-          <button class="nav__trigger" type="button" data-mega-trigger="lab">Lab</button>
-          <button class="nav__trigger" type="button" data-mega-trigger="stack">Stack</button>
-        </nav>
-        <div class="topbar__actions">
-          <a class="nav__link nav__link--inline" href="#contacto">Contacto</a>
-          <button class="button button--ghost" data-open="modal">Agenda</button>
-        </div>
-      </div>
-      <div class="mega-menu" data-mega-root aria-hidden="true">
-        <section class="mega-menu__panel" data-mega-panel="proyectos">
-          <div class="mega-menu__col">
-            <h3>Casos reales</h3>
-            <a href="#proyectos" class="mega-menu__link">Ver todos los proyectos</a>
-            <a href="https://github.com/Tiggreee/FacturAutentico" class="mega-menu__link" target="_blank" rel="noopener">FacturAutentico</a>
-            <a href="https://github.com/Tiggreee/sentrylog" class="mega-menu__link" target="_blank" rel="noopener">Sentrylog</a>
-            <a href="https://github.com/Tiggreee/Webqualizer" class="mega-menu__link" target="_blank" rel="noopener">Webqualizer</a>
-          </div>
-          <div class="mega-menu__col">
-            <h3>Entrega</h3>
-            <p>Frontend, backend, API y despliegue con criterio de operacion real.</p>
-          </div>
-        </section>
-        <section class="mega-menu__panel" data-mega-panel="servicios">
-          <div class="mega-menu__col">
-            <h3>Servicios</h3>
-            <a href="#servicios" class="mega-menu__link">Arquitectura de producto</a>
-            <a href="#servicios" class="mega-menu__link">Full stack delivery</a>
-            <a href="#servicios" class="mega-menu__link">Automatizacion con IA</a>
-            <a href="#servicios" class="mega-menu__link">Soporte y mejora continua</a>
-          </div>
-          <div class="mega-menu__col">
-            <h3>Formato</h3>
-            <p>Sprints cortos, evidencia funcional, decision tecnica clara y trazable.</p>
-          </div>
-        </section>
-        <section class="mega-menu__panel" data-mega-panel="lab">
-          <div class="mega-menu__col">
-            <h3>Lab actual</h3>
-            <a href="#apps" class="mega-menu__link">Webqualizer</a>
-            <a href="#apps" class="mega-menu__link">FacturAutentico</a>
-            <a href="#apps" class="mega-menu__link">TripleIApp</a>
-          </div>
-          <div class="mega-menu__col">
-            <h3>Objetivo</h3>
-            <p>Experimentar rapido y convertir hallazgos en producto aplicable.</p>
-          </div>
-        </section>
-        <section class="mega-menu__panel" data-mega-panel="stack">
-          <div class="mega-menu__col">
-            <h3>Core stack</h3>
-            <a href="#skills" class="mega-menu__link">React / Node / PostgreSQL</a>
-            <a href="#skills" class="mega-menu__link">APIs / Auth / Deploy</a>
-            <a href="#skills" class="mega-menu__link">Testing / Automation</a>
-          </div>
-          <div class="mega-menu__col">
-            <h3>Ruta rapida</h3>
-            <a href="#inicio" class="mega-menu__link">Inicio</a>
-            <a href="#proyectos" class="mega-menu__link">Portfolio</a>
-            <a href="#contacto" class="mega-menu__link">Contactar</a>
-          </div>
-        </section>
-      </div>
+    <header class="sq-header">
+      <a class="sq-header__brand" href="#inicio" aria-label="vmDev inicio">
+        <img src="assets/1sstlogo.png" alt="Logo vmDev" />
+      </a>
+      <nav class="sq-header__nav" aria-label="Menu principal">
+        <a href="#proyectos">Productos</a>
+        <a href="#servicios">Soluciones</a>
+        <a href="#apps">Recursos</a>
+        <button class="sq-btn sq-btn--ghost" data-open="modal">Iniciar sesion</button>
+        <button class="sq-btn sq-btn--solid" data-scroll-target="proyectos">Empezar</button>
+      </nav>
     </header>
-    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
     <main>
-      <section class="hero section" id="inicio" data-reveal>
-        <div class="container hero__grid">
-          <div class="hero__left">
-            <p class="kicker">DESARROLLO WEB / FULL STACK / MEJORA CONTINUA</p>
-            <h1 class="hero__title">Construyo productos web que resuelven problemas reales y escalan con criterio tecnico.</h1>
-            <p class="hero__copy">
-              Entrego de punta a punta: interfaz, backend, base de datos y despliegue.
-              Mi enfoque combina velocidad de ejecucion, arquitectura mantenible y decisiones tecnicas claras.
-            </p>
-            <div class="hero__actions">
-              <button class="button button--primary" data-scroll-target="proyectos">Ver casos reales</button>
-              <button class="button" data-open="modal">Sesion tecnica</button>
-            </div>
-            <div class="hero__rail">
-              <span>REACT</span>
-              <span>NODE.JS</span>
-              <span>APIS REST</span>
-              <span>AUTENTICACION</span>
-              <span>DEPLOY</span>
-            </div>
-            <div class="hero__banner" aria-hidden="true">
-              <span>BUILDER MODE</span>
-              <span>BUILDER MODE</span>
-              <span>BUILDER MODE</span>
-              <span>BUILDER MODE</span>
-            </div>
-            <div class="hero__showcase" aria-label="Capturas de repositorios reales en GitHub">
-              <a class="hero-shot hero-shot--wide hero-shot--link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/Tiggreee/sentrylog" alt="Vista previa del repositorio Sentrylog" loading="lazy" />
-                <div class="hero-shot__meta">
-                  <span>Sentrylog</span>
-                  <span>GitHub</span>
-                </div>
-              </a>
-              <a class="hero-shot hero-shot--tall hero-shot--link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/Tiggreee/FacturAutentico" alt="Vista previa del repositorio FacturAutentico" loading="lazy" />
-                <div class="hero-shot__meta">
-                  <span>FacturAutentico</span>
-                  <span>GitHub</span>
-                </div>
-              </a>
-              <a class="hero-shot hero-shot--link" href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/Tiggreee/Webqualizer" alt="Vista previa del repositorio Webqualizer" loading="lazy" />
-                <div class="hero-shot__meta">
-                  <span>Webqualizer</span>
-                  <span>GitHub</span>
-                </div>
-              </a>
-              <a class="hero-shot hero-shot--logo hero-shot--link" href="https://github.com/Tiggreee/TripleIApp" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/Tiggreee/TripleIApp" alt="Vista previa del repositorio TripleIApp" loading="lazy" />
-                <div class="hero-shot__meta">
-                  <span>TripleIApp</span>
-                  <span>GitHub</span>
-                </div>
-              </a>
+      <section class="hero-sq section" id="inicio">
+        <video class="hero-sq__video" autoplay muted loop playsinline>
+          <source src="https://cdn.coverr.co/videos/coverr-man-playing-the-piano-1579/1080p.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-sq__veil" aria-hidden="true"></div>
+        <div class="hero-sq__content">
+          <h1>Un sitio web hace tus ideas realidad</h1>
+          <button class="sq-btn sq-btn--solid" data-scroll-target="proyectos">Comenzar</button>
+          <p>Comienza gratis. No hace falta tarjeta de credito.</p>
+        </div>
+        <div class="hero-sq__carousel">
+          <button class="hero-sq__arrow" type="button" data-carousel="prev" aria-label="Anterior">&#10094;</button>
+          <div class="hero-sq__track-wrap">
+            <div class="hero-sq__track" data-carousel-track>
+              <article class="hero-sq__card">
+                <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 1" />
+              </article>
+              <article class="hero-sq__card">
+                <img src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 2" />
+              </article>
+              <article class="hero-sq__card">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 3" />
+              </article>
+              <article class="hero-sq__card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 4" />
+              </article>
             </div>
           </div>
-          <aside class="hero__right">
-            <div class="signal">
-              <div class="signal__head">
-                <span>Actualmente</span>
-                <span class="signal__live">ONLINE</span>
-              </div>
-              <div class="signal__list">
-                <div><strong>8+</strong><span>Sistemas lanzados</span></div>
-                <div><strong>4</strong><span>Verticales dominados</span></div>
-                <div><strong>24/7</strong><span>Builder mode</span></div>
-              </div>
-            </div>
-            <div class="manifesto">
-              <p>Diseño con criterio técnico.</p>
-              <p>Construyo enfocado en la operación.</p>
-              <p>Prioridad: claridad, velocidad y resultados.</p>
-            </div>
-          </aside>
+          <button class="hero-sq__arrow" type="button" data-carousel="next" aria-label="Siguiente">&#10095;</button>
         </div>
       </section>
 
