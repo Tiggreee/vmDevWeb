@@ -104,7 +104,7 @@ if ('IntersectionObserver' in window) {
 
 if (contactForm) {
   const firstInput = contactForm.querySelector('input[name="nombre"]');
-  const section = document.querySelector('#contacto');
+  const section = document.querySelector('#contact');
   if (firstInput && section) {
     section.addEventListener('click', (event) => {
       if (event.target.closest('.contact-form')) {
