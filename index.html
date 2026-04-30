@@ -5,384 +5,239 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de vmDev: desarrollo web full stack orientado a resolucion de problemas y mejora continua."
+      content="Portafolio de Victor (vmDev): desarrollo web full stack orientado a resultados, rendimiento y experiencia de producto."
     />
-    <meta name="theme-color" content="#0f1418" />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://tiggreee.github.io/vmDevWeb/" />
+    <meta name="theme-color" content="#0d1117" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="vmDev | Desarrollo Web" />
+    <meta property="og:title" content="vmDev | Full Stack Developer" />
     <meta
       property="og:description"
-      content="Desarrollo web full stack para resolver problemas reales con enfoque funcional y mejora continua."
+      content="Construyo productos web con impacto real: frontend sólido, backend mantenible y despliegue listo para producción."
     />
-    <meta property="og:url" content="https://tiggreee.github.io/vmDevWeb/" />
     <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/1sstlogo.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="vmDev | Desarrollo Web" />
-    <meta
-      name="twitter:description"
-      content="Portfolio de desarrollo web full stack orientado a resultados funcionales."
-    />
-    <meta name="twitter:image" content="https://tiggreee.github.io/vmDevWeb/assets/1sstlogo.png" />
-    <title>vmDev | Desarrollo Web</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/2ndlogo.png" />
+    <title>vmDev | Full Stack Developer</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/2ndlogo.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/2ndlogo.png" />
     <link rel="apple-touch-icon" href="assets/3rdlogo.png" />
-    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Victor / vmDev",
-        "url": "https://tiggreee.github.io/vmDevWeb/",
-        "jobTitle": "Desarrollador Web Full Stack",
-        "sameAs": [
-          "https://github.com/Tiggreee"
-        ],
-        "knowsAbout": [
-          "Desarrollo Web Full Stack",
-          "Frontend",
-          "Backend",
-          "Diseno de APIs",
-          "Node.js",
-          "React"
-        ]
-      }
-    </script>
   </head>
   <body>
-    <header class="sq-header">
-      <a class="sq-header__brand" href="#inicio" aria-label="vmDev inicio">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Inicio vmDev">
         <img src="assets/1sstlogo.png" alt="Logo vmDev" />
       </a>
-      <nav class="sq-header__nav" aria-label="Menu principal">
-        <a href="#proyectos">Productos</a>
-        <a href="#servicios">Soluciones</a>
-        <a href="#apps">Recursos</a>
-        <button class="sq-btn sq-btn--ghost" data-open="modal">Iniciar sesion</button>
-        <button class="sq-btn sq-btn--solid" data-scroll-target="proyectos">Empezar</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+        Menu
+      </button>
+      <nav class="main-nav" id="main-nav" data-nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#valor">Valor</a>
+        <a href="#stack">Stack</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#historia">Historia</a>
+        <a href="#contacto">Contacto</a>
+        <a class="button button--ghost" href="https://github.com/Tiggreee" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero-sq section" id="inicio">
-        <video class="hero-sq__video" autoplay muted loop playsinline>
-          <source src="https://cdn.coverr.co/videos/coverr-man-playing-the-piano-1579/1080p.mp4" type="video/mp4" />
+      <section class="hero" id="inicio">
+        <video class="hero__video" autoplay muted loop playsinline poster="assets/logotab2.png">
+          <source src="https://cdn.coverr.co/videos/coverr-man-working-on-a-laptop-1570/1080p.mp4" type="video/mp4" />
         </video>
-        <div class="hero-sq__veil" aria-hidden="true"></div>
-        <div class="hero-sq__content">
-          <h1>Un sitio web hace tus ideas realidad</h1>
-          <button class="sq-btn sq-btn--solid" data-scroll-target="proyectos">Comenzar</button>
-          <p>Comienza gratis. No hace falta tarjeta de credito.</p>
-        </div>
-        <div class="hero-sq__carousel">
-          <button class="hero-sq__arrow" type="button" data-carousel="prev" aria-label="Anterior">&#10094;</button>
-          <div class="hero-sq__track-wrap">
-            <div class="hero-sq__track" data-carousel-track>
-              <article class="hero-sq__card">
-                <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 1" />
-              </article>
-              <article class="hero-sq__card">
-                <img src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 2" />
-              </article>
-              <article class="hero-sq__card">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 3" />
-              </article>
-              <article class="hero-sq__card">
-                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200&auto=format&fit=crop" alt="Plantilla producto 4" />
-              </article>
-            </div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__content container">
+          <p class="eyebrow">FULL STACK DEVELOPER · PRODUCT THINKING · DELIVERY</p>
+          <h1>Diseño y construyo productos web que sí ayudan a conseguir resultados de negocio.</h1>
+          <p class="hero__lead">
+            Soy Victor (vmDev). Conecto estrategia, UX y arquitectura técnica para entregar software usable, mantenible
+            y listo para escalar.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--solid" href="#proyectos">Ver casos</a>
+            <a class="button button--ghost-light" href="#contacto">Agendar entrevista</a>
+            <a class="button button--ghost-light" href="https://github.com/Tiggreee" target="_blank" rel="noopener">Descargar CV</a>
           </div>
-          <button class="hero-sq__arrow" type="button" data-carousel="next" aria-label="Siguiente">&#10095;</button>
+          <ul class="hero__metrics" aria-label="Resultados clave">
+            <li><strong>8+</strong><span>sistemas lanzados</span></li>
+            <li><strong>4</strong><span>industrias trabajadas</span></li>
+            <li><strong>24/7</strong><span>ownership técnico</span></li>
+          </ul>
         </div>
       </section>
 
-      <section class="section section--projects" id="proyectos" data-reveal>
+      <section class="section container" id="proyectos">
+        <div class="section__head">
+          <p class="eyebrow">PROYECTOS DESTACADOS</p>
+          <h2>Casos reales con foco en impacto</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <p class="project-card__meta">FULL STACK · MONITOREO</p>
+            <h3>Sentrylog</h3>
+            <p>Plataforma de monitoreo CCTV en tiempo real con alertas y trazabilidad operacional.</p>
+            <ul>
+              <li>Frontend React para operación continua.</li>
+              <li>Backend Node + PostgreSQL con eventos en tiempo real.</li>
+              <li>Diseño orientado a reducir tiempo de reacción.</li>
+            </ul>
+            <a href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">Ver repositorio</a>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">APP WEB · FACTURACIÓN</p>
+            <h3>FacturAutentico</h3>
+            <p>Flujo CFDI 4.0 diseñado para minimizar errores y acelerar procesos administrativos.</p>
+            <ul>
+              <li>UX guiada para captura fiscal.</li>
+              <li>Arquitectura escalable para reglas de negocio.</li>
+              <li>Entrega lista para uso operativo.</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Repositorio</a>
+              <a href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">TOOLING · FRONTEND INTERACTIVO</p>
+            <h3>Webqualizer</h3>
+            <p>Demo técnica de audio web para explorar interacción, rendimiento y experiencia visual.</p>
+            <ul>
+              <li>JavaScript + Web Audio API.</li>
+              <li>Controles en tiempo real con feedback claro.</li>
+              <li>Base útil para productos de media y e-learning.</li>
+            </ul>
+            <a href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">Ver repositorio</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="valor">
         <div class="container">
           <div class="section__head">
-            <p class="section__label">PORTFOLIO</p>
-            <h2>Proyectos reales</h2>
-            <p>Cada caso muestra problema, solucion implementada y enfoque de impacto operativo.</p>
+            <p class="eyebrow">POR QUÉ CONTRATARME</p>
+            <h2>Value proposition para equipos que quieren ejecutar bien</h2>
+          </div>
+          <div class="value-grid">
+            <article>
+              <h3>Pienso en producto</h3>
+              <p>No solo programo features; priorizo impacto, claridad de UX y métricas de negocio.</p>
+            </article>
+            <article>
+              <h3>Entrego end-to-end</h3>
+              <p>Puedo tomar ownership de frontend, backend, modelo de datos, despliegue y refinamiento posterior.</p>
+            </article>
+            <article>
+              <h3>Comunico y documento</h3>
+              <p>Decisiones técnicas trazables, trade-offs explícitos y colaboración fluida con equipos multidisciplinarios.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="stack">
+        <div class="container split">
+          <div>
+            <p class="eyebrow">STACK & CAPACIDADES</p>
+            <h2>Tecnología alineada con producto</h2>
+            <p>
+              Selecciono herramientas por impacto en negocio, velocidad de desarrollo y mantenibilidad del sistema, no
+              por moda.
+            </p>
           </div>
           <div class="chips">
-            <button class="chip is-active" data-filter="all">Todos</button>
-            <button class="chip" data-filter="full-stack">Full stack</button>
-            <button class="chip" data-filter="frontend">Frontend</button>
-            <button class="chip" data-filter="tooling">Tooling</button>
-            <button class="chip" data-filter="app">App</button>
-          </div>
-          <div class="chips chips--period">
-            <button class="chip is-active" data-period="all">Todos los periodos</button>
-            <button class="chip" data-period="2026">2026</button>
-            <button class="chip" data-period="2025">2025</button>
-          </div>
-          <div class="projects">
-            <article class="project" data-project="full-stack" data-year="2026">
-              <p class="project__meta">FULL STACK / 2026</p>
-              <h3>Sentrylog</h3>
-              <p>Monitoreo CCTV en tiempo real con alertas y trazabilidad operativa.</p>
-              <p class="project__impact">Impacto: mejor visibilidad operativa y menor tiempo de reaccion ante eventos.</p>
-              <p class="project__stack">React / Node / PostgreSQL / WebSocket</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">Ver repositorio</a>
-                <span class="project__status">Demo no publica</span>
-              </div>
-            </article>
-            <article class="project" data-project="app" data-year="2025">
-              <p class="project__meta">APP / 2025</p>
-              <h3>FacturAutentico</h3>
-              <p>CFDI 4.0 para flujo administrativo real con menor carga manual.</p>
-              <p class="project__impact">Impacto: flujo fiscal mas consistente, con captura guiada y menos errores de proceso.</p>
-              <p class="project__stack">React / Vite / API REST</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Ver repositorio</a>
-                <a class="project__link project__link--demo" href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Ver demo</a>
-              </div>
-            </article>
-            <article class="project" data-project="tooling" data-year="2025">
-              <p class="project__meta">TOOLING / 2025</p>
-              <h3>Webqualizer</h3>
-              <p>Ecualizador web interactivo para experimentar con audio y controles en tiempo real.</p>
-              <p class="project__impact">Impacto: experiencia mas inmersiva y una demo tecnica visualmente memorable.</p>
-              <p class="project__stack">JavaScript / Web Audio / UI</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">Ver repositorio</a>
-                <span class="project__status">Repositorio publico</span>
-              </div>
-            </article>
-            <article class="project" data-project="frontend" data-year="2025">
-              <p class="project__meta">FRONTEND / 2025</p>
-              <h3>AIOutputtoPDFweb</h3>
-              <p>Herramienta web para convertir salidas de IA en PDF utilizable de forma directa.</p>
-              <p class="project__impact">Impacto: menos friccion entre prototipo, contenido generado y entrega final.</p>
-              <p class="project__stack">JavaScript / Export / UX</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/AIOutputtoPDFweb" target="_blank" rel="noopener">Ver repositorio</a>
-                <span class="project__status">Repositorio publico</span>
-              </div>
-            </article>
-            <article class="project" data-project="full-stack" data-year="2026">
-              <p class="project__meta">FULL STACK / 2026</p>
-              <h3>TripleIApp</h3>
-              <p>Aplicacion full stack enfocada en operaciones y flujo funcional de punta a punta.</p>
-              <p class="project__impact">Impacto: mejor continuidad operativa con una base mas lista para escalar.</p>
-              <p class="project__stack">React / Node / API</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/TripleIApp" target="_blank" rel="noopener">Ver repositorio</a>
-                <span class="project__status">Repositorio publico</span>
-              </div>
-            </article>
-            <article class="project" data-project="full-stack" data-year="2025">
-              <p class="project__meta">FULL STACK / 2025</p>
-              <h3>PawnGO</h3>
-              <p>Proyecto web orientado a operacion de negocio con flujo integral de frontend y backend.</p>
-              <p class="project__impact">Impacto: proceso centralizado de operacion en una sola interfaz de trabajo.</p>
-              <p class="project__stack">Full Stack / API / UI</p>
-              <div class="project__actions">
-                <a class="project__link" href="https://github.com/Tiggreee/PawnGO" target="_blank" rel="noopener">Ver repositorio</a>
-                <span class="project__status">Repositorio publico</span>
-              </div>
-            </article>
-          </div>
-          <p class="projects__empty is-hidden" data-filter-empty>No hay proyectos en esta categoria por ahora.</p>
-        </div>
-      </section>
-
-      <section class="section" id="servicios" data-reveal>
-        <div class="container">
-          <div class="section__head section__head--split">
-            <p class="section__label">SERVICIOS</p>
-            <h2>Servicios técnicos</h2>
-          </div>
-          <div class="services">
-            <article class="service-card">
-              <h3>Arquitectura de producto</h3>
-              <p>Mapeo tecnico, decisiones de stack y alcance implementable.</p>
-            </article>
-            <article class="service-card">
-              <h3>Full stack delivery</h3>
-              <p>Frontend, backend, base de datos, despliegue y operacion.</p>
-            </article>
-            <article class="service-card">
-              <h3>Automatizacion con IA</h3>
-              <p>Integraciones y automatizaciones web para procesos de negocio.</p>
-            </article>
-            <article class="service-card">
-              <h3>Soporte y mejora continua</h3>
-              <p>Correcciones, optimizacion y evolucion funcional despues del lanzamiento.</p>
-            </article>
+            <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Express</span
+            ><span>PostgreSQL</span><span>APIs REST</span><span>Auth</span><span>Deploy</span><span>Testing</span>
+            <span>Automation</span><span>Observability</span>
           </div>
         </div>
       </section>
 
-      <section class="section" id="apps" data-reveal>
-        <div class="container">
-          <div class="section__head">
-            <p class="section__label">LAB LOG</p>
-            <h2>Lab en curso</h2>
-            <p>Experimentos que después se convierten en producto.</p>
-          </div>
-          <div class="lab">
-            <article class="lab__item">
-              <span class="lab__index">01</span>
-              <div>
-                <h3>Webqualizer</h3>
-                <p>Ecualizador web en tiempo real para experimentar interfaces de audio con enfoque UX.</p>
-                <a class="project__link" href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">Ver repositorio</a>
-              </div>
-            </article>
-            <article class="lab__item">
-              <span class="lab__index">02</span>
-              <div>
-                <h3>FacturAutentico</h3>
-                <p>Sistema CFDI 4.0 para operacion fiscal real con flujo guiado y practico.</p>
-                <a class="project__link project__link--demo" href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Ver demo</a>
-              </div>
-            </article>
-            <article class="lab__item">
-              <span class="lab__index">03</span>
-              <div>
-                <h3>TripleIApp</h3>
-                <p>Proyecto full stack para flujo de negocio y gestion web con enfoque productivo.</p>
-                <a class="project__link" href="https://github.com/Tiggreee/TripleIApp" target="_blank" rel="noopener">Ver repositorio</a>
-              </div>
-            </article>
-          </div>
+      <section class="section container" id="proceso">
+        <div class="section__head">
+          <p class="eyebrow">FORMA DE TRABAJO</p>
+          <h2>Cómo convierto ideas en producto real</h2>
+        </div>
+        <div class="process">
+          <article>
+            <h3>01 · Discovery</h3>
+            <p>Entiendo el problema, defino alcance realista y priorizo por valor.</p>
+          </article>
+          <article>
+            <h3>02 · Build</h3>
+            <p>Iteraciones cortas con evidencia funcional, feedback continuo y decisiones claras.</p>
+          </article>
+          <article>
+            <h3>03 · Launch</h3>
+            <p>Despliegue, monitoreo inicial, hardening y transferencia técnica ordenada.</p>
+          </article>
         </div>
       </section>
 
-      <section class="section" id="biblioteca" data-reveal>
-        <div class="container shelf-wrap">
-          <div class="section__head">
-            <p class="section__label">BIBLIOTECA</p>
-            <h2>Playbooks estilo libro</h2>
-            <p>Seccion discreta para mostrar procesos de trabajo con interaccion simple.</p>
-          </div>
-          <div class="shelf">
-            <div class="shelf__books" role="tablist" aria-label="Playbooks">
-              <button class="book is-active" type="button" data-book-trigger="book-1" role="tab" aria-selected="true">Discovery</button>
-              <button class="book" type="button" data-book-trigger="book-2" role="tab" aria-selected="false">Build</button>
-              <button class="book" type="button" data-book-trigger="book-3" role="tab" aria-selected="false">Scale</button>
-            </div>
-            <div class="shelf__panel is-active" data-book-panel="book-1" role="tabpanel">
-              <h3>Discovery sprint</h3>
-              <p>Diagnostico tecnico, mapa de riesgos y definicion de alcance con fechas reales.</p>
-            </div>
-            <div class="shelf__panel" data-book-panel="book-2" role="tabpanel">
-              <h3>Build pipeline</h3>
-              <p>Entrega por iteraciones cortas, con evidencia funcional y decisiones documentadas.</p>
-            </div>
-            <div class="shelf__panel" data-book-panel="book-3" role="tabpanel">
-              <h3>Scale handoff</h3>
-              <p>Hardening, monitoreo y traspaso operativo para mantener velocidad sin deuda oculta.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="skills" data-reveal>
-        <div class="container">
-          <div class="section__head">
-            <p class="section__label">STACK</p>
-            <h2>Stack con el que trabajo hoy</h2>
-          </div>
-          <div class="stack-grid">
-            <div class="stack-grid__box">
-              <h3>Software</h3>
-              <div class="skills">
-                <span class="skill">JavaScript</span>
-                <span class="skill">TypeScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">Express</span>
-                <span class="skill">PostgreSQL</span>
-                <span class="skill">APIs</span>
-              </div>
-            </div>
-            <div class="stack-grid__box">
-              <h3>Web y operación</h3>
-              <div class="skills">
-                <span class="skill">Telemetria</span>
-                <span class="skill">Automation</span>
-                <span class="skill">Testing</span>
-                <span class="skill">Deploy</span>
-                <span class="skill">Monitoreo</span>
-                <span class="skill">Mantenimiento</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--contact" id="contacto" data-reveal>
-        <div class="container contact">
-          <div class="contact__left">
-            <p class="section__label">CONTACTO</p>
-            <h2>Si quieres ejecutar con un correcto enfoque, bússcame, y encontremos tu mejor proceso.
-              Si buscas alguien que conecte estrategia tecnica con entrega real, agendamos.
+      <section class="section section--alt" id="historia">
+        <div class="container split">
+          <div>
+            <p class="eyebrow">STORYTELLING PROFESIONAL</p>
+            <h2>Mi enfoque: construir software que funcione en la vida real</h2>
+            <p>
+              Mi transición a desarrollo web nace de resolver problemas concretos, no de perseguir “trends”. Trabajo con
+              una mentalidad de producto: entender contexto, reducir fricción y entregar valor medible.
             </p>
-            <ul class="contact__list">
-              <li>LinkedIn: @tiggreee</li>
-              <li>
-                tiggreee@vmdev.lat
-                <button class="copy-mail" type="button" data-copy-email="tiggreee@vmdev.lat">Copiar</button>
-              </li>
+            <p>
+              El objetivo de cada entrega es simple: que el usuario final trabaje mejor y que el negocio tenga una base
+              sólida para crecer.
+            </p>
+          </div>
+          <div class="timeline">
+            <article>
+              <span>2025</span>
+              <h3>Base full stack</h3>
+              <p>Consolidación de frontend + backend + APIs con proyectos funcionales.</p>
+            </article>
+            <article>
+              <span>2026</span>
+              <h3>Productos con operación real</h3>
+              <p>Enfoque en monitoreo, facturación y sistemas orientados a procesos de negocio.</p>
+            </article>
+            <article>
+              <span>Hoy</span>
+              <h3>Buscando equipo de alto nivel</h3>
+              <p>Quiero aportar en un entorno que valore ejecución, ownership y mejora continua.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contacto">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">CONTACTO</p>
+            <h2>Si estás contratando, hablemos.</h2>
+            <p>
+              Busco oportunidades donde pueda aportar en frontend/full stack con ownership, criterio de producto y
+              ejecución sólida.
+            </p>
+            <ul class="contact-list">
+              <li>Email: <strong>tiggreee@vmdev.lat</strong></li>
+              <li>GitHub: <strong>@Tiggreee</strong></li>
+              <li>Disponibilidad: <strong>Inmediata / remota</strong></li>
             </ul>
           </div>
           <form class="contact-form" data-contact data-api-url="https://api.vmdev.lat/api/contact">
             <input class="input input--hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <input class="input" type="text" name="nombre" placeholder="Nombre" required />
             <input class="input" type="email" name="email" placeholder="Email" required />
-            <textarea class="input" name="idea" rows="4" placeholder="Que quieres construir" required></textarea>
-            <button class="button button--primary" type="submit">Enviar</button>
+            <textarea class="input" name="idea" rows="5" placeholder="Cuéntame del rol o proyecto" required></textarea>
+            <button class="button button--solid" type="submit">Enviar mensaje</button>
           </form>
-        </div>
-      </section>
-
-      <section class="section section--bio-discreet" id="media" data-reveal>
-        <div class="container media media--discreet">
-          <div class="media__content media__content--quiet">
-            <p class="section__label">IDENTIDAD / CIERRE</p>
-            <h2>vmDev, build-first portfolio</h2>
-            <p>
-              Enfoque full stack orientado a producto real, ejecución rápida y criterio técnico.
-              Cierre visual pensado como pieza editorial de marca.
-            </p>
-            <div class="media__logos media__logos--end">
-              <img class="media__logo-main" src="assets/1sstlogo.png" alt="Logo principal vmDev" loading="lazy" data-alpha-key="dark" />
-              <img class="media__logo-badge" src="assets/2ndlogo.png" alt="Isotipo vmDev" loading="lazy" data-alpha-key="dark" />
-              <img class="media__logo-badge" src="assets/3rdlogo.png" alt="Variante de logo vmDev" loading="lazy" data-alpha-key="dark" />
-            </div>
-          </div>
-          <div class="media__visual media__visual--bio-final">
-            <img class="media__hero-logo" src="assets/logotab2.png" alt="Logo vmDev" loading="lazy" data-alpha-key="checker" />
-          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>vmDev Portfolio</p>
-      <p>Desarrollo web full stack aplicado a productos reales</p>
+      <p>vmDev · Full Stack Portfolio</p>
+      <p>Construido para comunicar valor y conseguir entrevistas.</p>
     </footer>
-
-    <div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-      <div class="modal__overlay" data-close="modal"></div>
-      <div class="modal__content" data-modal-content>
-        <div class="modal__head">
-          <h3 id="modal-title">Agendar sesion tecnica</h3>
-          <button class="icon-button" type="button" data-close="modal">x</button>
-        </div>
-        <form class="modal__form">
-          <input class="input" type="text" name="nombre" placeholder="Nombre" />
-          <input class="input" type="email" name="email" placeholder="Email" />
-          <button class="button button--primary" type="button" data-close="modal">Listo</button>
-        </form>
-      </div>
-    </div>
 
     <div class="toast" data-toast role="status" aria-live="polite">Mensaje enviado</div>
     <script src="main.js"></script>
