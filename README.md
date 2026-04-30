@@ -11,6 +11,11 @@ Portfolio personal de vmDev con UI futurista, casos reales y flujo de contacto l
 - Filtros de proyectos por categoria con empty state.
 - Modal accesible con foco controlado (Escape + trap de teclado).
 - Animaciones de entrada por seccion (IntersectionObserver).
+- Showcase principal enfocado en repositorios activos y relevantes:
+	- Sentrylog
+	- FacturAutentico
+	- Webqualizer
+	- TripleIApp
 - Formulario de contacto con validacion y dos modos de envio:
 	- API (`POST /api/contact`) cuando configuras `data-api-url`.
 	- Fallback a `mailto` cuando no hay backend.
