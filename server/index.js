@@ -17,7 +17,7 @@ const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || '')
 const DATABASE_URL = process.env.DATABASE_URL;
 
 if (!DATABASE_URL) {
-  throw new Error('Falta DATABASE_URL en variables de entorno');
+  throw new Error('Missing DATABASE_URL environment variable');
 }
 
 const isLocalDb = DATABASE_URL.includes('localhost') || DATABASE_URL.includes('127.0.0.1');
@@ -33,7 +33,7 @@ const pool = new Pool({
 });
 
 if (IS_PROD && ALLOWED_ORIGINS.length === 0) {
-  throw new Error('Falta ALLOWED_ORIGINS en entorno de produccion');
+  throw new Error('Missing ALLOWED_ORIGINS in production environment');
 }
 
 const corsOptions = {
@@ -48,7 +48,7 @@ const corsOptions = {
       return;
     }
 
-    callback(new Error('Origen no permitido por CORS'));
+    callback(new Error('CORS origin is not allowed'));
   }
 };
 
@@ -107,17 +107,17 @@ app.post('/api/contact', async (req, res) => {
     };
 
     if (!payload.nombre || !payload.email || !payload.idea) {
-      res.status(400).json({ ok: false, error: 'Faltan campos requeridos' });
+      res.status(400).json({ ok: false, error: 'Missing required fields' });
       return;
     }
 
     if (!isValidEmail(payload.email)) {
-      res.status(400).json({ ok: false, error: 'Email invalido' });
+      res.status(400).json({ ok: false, error: 'Invalid email format' });
       return;
     }
 
     if (payload.nombre.length > 120 || payload.email.length > 160 || payload.idea.length > 1600) {
-      res.status(400).json({ ok: false, error: 'Campos fuera de rango' });
+      res.status(400).json({ ok: false, error: 'Field length out of range' });
       return;
     }
 
@@ -138,12 +138,12 @@ app.post('/api/contact', async (req, res) => {
 
     res.status(201).json({ ok: true });
   } catch (_error) {
-    res.status(500).json({ ok: false, error: 'Error interno del servidor' });
+    res.status(500).json({ ok: false, error: 'Internal server error' });
   }
 });
 
 app.use((_req, res) => {
-  res.status(404).json({ ok: false, error: 'Ruta no encontrada' });
+  res.status(404).json({ ok: false, error: 'Route not found' });
 });
 
 const startServer = async () => {

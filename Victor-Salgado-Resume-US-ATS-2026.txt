@@ -1,0 +1,14 @@
+Victor Manuel Salgado Luna
+Full Stack Developer | Bilingual (English/Spanish) | Remote
+Morelia, Michoacan, Mexico
+(+52) 443 278 0203 | notlikeiusedto@gmail.com
+linkedin.com/in/victor-salgado-tiggreee | github.com/Tiggreee
+
+PROFESSIONAL SUMMARY
+Full Stack Developer with hands-on experience building web applications using JavaScript, TypeScript, React, Node.js, Express, HTML, and CSS. Proven background in operations, team leadership, and bilingual customer-facing roles supporting U.S. accounts. Strong execution mindset across frontend and backend, with clean coding practices, reliable delivery, and clear communication in cross-functional environments.
+
+TECHNICAL SKILLS
+- Languages/Frameworks: JavaScript (ES6+), TypeScript, React, Node.js, Express, HTML5, CSS3, Bootstrap
+- Databases: MongoDB, MySQL, PostgreSQL
+- Tools: Git, GitHub, Postman, VS Code, Jira, Trello, REST APIs, Agile/Scrum
+- Languages: Spanish (Native), English (Full Professional Proficiency)
