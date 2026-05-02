@@ -1,0 +1,16 @@
+---
+description: Remove origin traces and preserve professional brand tone
+alwaysApply: true
+---
+
+# No Provenance Traces
+
+- Do not include automation-signature language in user-facing copy or deliverables.
+- Do not expose internal prompting/process text in UI content.
+- Avoid generic filler copy that feels machine-generated.
+
+# Brand Tone
+
+- Keep tone professional, specific, and context-aware.
+- Prefer confident, concise language over verbose explanations.
+- Match the user's preferred language and style.

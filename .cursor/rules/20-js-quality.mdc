@@ -1,0 +1,22 @@
+---
+description: JavaScript and React quality defaults
+globs: **/*.{js,jsx,ts,tsx}
+alwaysApply: false
+---
+
+# JS/React Quality
+
+- Prefer functional React components and hooks.
+- Keep modules small, isolated, and reusable.
+- Avoid cross-import coupling across unrelated features.
+- Use self-explanatory naming and structure; comments are discouraged by default.
+- Enforce accessibility basics:
+  - alt text for images
+  - semantic elements/ARIA when needed
+  - maintain readable contrast
+- Keep styling and UX polished, consistent, and production-grade.
+- Avoid visible provenance traces in UI copy, component names, class names, or content.
+
+# Validation
+
+- If scripts exist, run lint/test/build before proposing production readiness.

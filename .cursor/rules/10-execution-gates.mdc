@@ -1,0 +1,26 @@
+---
+description: Safe execution gates and bash-first workflow
+alwaysApply: true
+---
+
+# Execution Gates
+
+- Prefer bash-style command examples unless user asks another shell.
+- Before running build/deploy, do preflight:
+  - detect package manager (`pnpm`, `npm`, `yarn`)
+  - detect scripts (`format`, `lint`, `test`, `typecheck`, `build`)
+- Run gates in order:
+  - `format` -> `lint` -> `test` -> `typecheck` -> `build` -> `deploy`
+- If a gate script is missing, report and continue.
+- If a gate fails, stop deploy and report remediation steps.
+
+# Git Safety
+
+- Never commit, branch, or open PR without explicit user request.
+- Never use destructive git commands unless explicitly approved.
+
+# Code Professionalism
+
+- Prefer clean, readable, production-ready implementations over quick hacks.
+- Do not add comments unless logic is genuinely non-obvious or safety-critical.
+- Never leave TODO markers, placeholder text, or scaffold traces in final output.

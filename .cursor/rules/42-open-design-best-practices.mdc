@@ -1,0 +1,36 @@
+---
+description: Open Design inspired workflow for high-quality design output
+alwaysApply: true
+---
+
+# Discovery Before Output
+
+- For new design tasks, start with a compact discovery pass:
+  - target surface
+  - audience
+  - tone
+  - constraints
+  - success criteria
+- Do not produce polished output before direction is clear.
+
+# Deterministic Visual Direction
+
+- Choose one visual direction and keep it consistent across the whole artifact.
+- Keep palette, typography, spacing rhythm, and component styling coherent.
+- Avoid freestyle style-mixing that weakens brand clarity.
+
+# Quality Gate Before Final
+
+- Run a short self-critique before delivery:
+  - hierarchy
+  - consistency
+  - accessibility
+  - specificity
+  - restraint
+- If quality is weak in any dimension, revise once before final response.
+
+# Anti-Slop Policy
+
+- Avoid generic filler visuals and random decorative noise.
+- Use honest placeholders instead of fake metrics or invented claims.
+- Keep outcomes production-oriented, with no process-origin traces in deliverables.

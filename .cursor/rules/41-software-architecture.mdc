@@ -1,0 +1,23 @@
+---
+description: Software architecture standards for maintainable production systems
+alwaysApply: true
+---
+
+# Architecture Principles
+
+- Prefer clear boundaries: UI, application logic, domain logic, infrastructure.
+- Keep modules cohesive and loosely coupled.
+- Define explicit contracts between components (types/interfaces/schemas).
+- Avoid hidden cross-layer dependencies and circular imports.
+
+# Change Strategy
+
+- Prefer incremental, reversible changes over large risky rewrites.
+- Preserve backward compatibility unless user approves a breaking change.
+- Include migration notes when behavior or interfaces change.
+
+# Operational Readiness
+
+- Ensure error paths are explicit and user-safe.
+- Prefer deterministic behavior and idempotent operations when possible.
+- Add observability hooks where useful (structured errors, actionable logs, measurable checkpoints).

@@ -1,0 +1,19 @@
+---
+description: Priority order to resolve rule conflicts deterministically
+alwaysApply: true
+---
+
+# Rule Priority (highest to lowest)
+
+1. safety, security, and no-provenance-trace policy
+2. explicit user request in current chat
+3. session toggle state (`tiggreeeon` / `tiggreeeoff`)
+4. enterprise release policy (only when release is requested)
+5. architecture and design quality rules
+6. token-efficiency and style preferences
+
+# Conflict Resolution
+
+- If two rules conflict, apply the higher-priority rule and continue.
+- If user request conflicts with priority item 1, keep priority item 1 and explain briefly.
+- Keep conflict explanations one or two lines maximum.

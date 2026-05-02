@@ -1,0 +1,32 @@
+---
+description: Token-efficient interaction policy with high signal and low verbosity
+alwaysApply: true
+---
+
+# Default Interaction Mode
+
+- Default to concise, high-signal responses.
+- Expand only when user asks for deeper detail.
+- Avoid repeating confirmed context from previous turns.
+
+# Tool Usage Efficiency
+
+- Prefer targeted reads/searches over broad scans.
+- Batch independent tool calls in parallel.
+- Reuse previously gathered facts instead of re-running the same checks.
+- Avoid unnecessary browser/MCP actions when file/tool evidence is enough.
+
+# Output Compression Rules
+
+- Use short bullet lists for decisions and outcomes.
+- Summarize logs; include raw output only when user requests it.
+- For large tasks, provide:
+  - what changed
+  - why it matters
+  - next action
+- Keep default response target to 4-8 lines unless task complexity requires more.
+
+# Clarification Discipline
+
+- Ask at most one blocking question at a time.
+- If uncertainty is low, proceed with best safe assumption and state it briefly.

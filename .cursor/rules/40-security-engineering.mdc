@@ -1,0 +1,27 @@
+---
+description: Security-first engineering defaults for code and delivery
+alwaysApply: true
+---
+
+# Security Baseline
+
+- Never expose or log secrets, tokens, API keys, credentials, or private URLs.
+- Never hardcode secrets in source, tests, examples, or docs.
+- Use environment variables for sensitive values and redact them in outputs.
+- Validate and sanitize all external input paths, params, and payloads.
+- Prefer least-privilege configurations and deny-by-default behavior.
+
+# Risk Controls
+
+- Treat these as high-risk and require explicit user confirmation:
+  - production deploys
+  - destructive operations
+  - auth/permissions changes
+  - secret rotation or credential edits
+- If a command can leak data, explain risk and propose a safer alternative first.
+
+# Secure Delivery Quality
+
+- Flag insecure patterns immediately (eval-like execution, unsafe deserialization, blind trust of user input).
+- Prefer safe defaults over convenience shortcuts.
+- Ship production-ready code without debug backdoors, test bypasses, or temporary auth shortcuts.

@@ -1,0 +1,46 @@
+---
+description: Enterprise guardrails for release, security, architecture, and quality
+alwaysApply: true
+---
+
+# Enterprise Release Policy
+
+- Apply this policy when a production/release-readiness decision is requested.
+- Production release is blocked unless all applicable gates pass:
+  - format
+  - lint
+  - test
+  - typecheck
+  - build
+  - security-review
+- If a gate script is unavailable, report it explicitly as `MISSING`, not `PASS`.
+
+# Risk Classification
+
+- Classify findings as `critical`, `high`, `medium`, `low`.
+- Block release on any `critical` or `high` finding in:
+  - security
+  - architecture integrity
+  - data integrity
+  - authentication/authorization
+
+# Architecture Guardrails
+
+- Block release when there is:
+  - circular dependency risk in core modules
+  - boundary violation across layers (UI/domain/infra)
+  - unsafe breaking change without migration strategy
+- Require incremental refactor plans for major architecture changes.
+
+# Security Guardrails
+
+- Block release if secrets exposure is detected in code, logs, or output.
+- Block release if user-controlled input reaches sensitive operations without validation.
+- Reject insecure shortcuts (temporary auth bypasses, debug backdoors, disabled protections).
+
+# Final Decision Contract
+
+Every release-readiness report must end with:
+- `STATUS: OK | WARN | BLOCK`
+- `TOP_ISSUES: ...`
+- `NEXT_SAFE_STEP: ...`

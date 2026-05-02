@@ -1,0 +1,21 @@
+---
+description: Design workflow starts with a locked brief before visual output
+alwaysApply: true
+---
+
+# Brief First
+
+- Before proposing UI directions, gather a concise brief:
+  - surface (web, mobile, dashboard, deck)
+  - audience
+  - tone
+  - constraints
+  - success criteria
+- If brief context is missing, ask focused questions first.
+- Do not jump to polished visuals without confirmed direction.
+
+# Direction Control
+
+- Prefer deterministic visual directions instead of improvisation.
+- Keep palette and typography consistent across the full deliverable.
+- Keep layout hierarchy explicit: hero -> structure -> details.

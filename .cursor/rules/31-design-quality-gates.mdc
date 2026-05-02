@@ -1,0 +1,20 @@
+---
+description: Design quality gates for production-grade output
+alwaysApply: true
+---
+
+# Design Quality Gates
+
+- Validate each design output against:
+  - visual hierarchy clarity
+  - spacing rhythm consistency
+  - typography scale coherence
+  - color restraint and contrast
+  - accessibility basics
+- If quality is below production level, revise before final delivery.
+- Avoid decorative clutter, random gradients, and inconsistent component styling.
+
+# Delivery Standard
+
+- Deliverables must be implementation-ready, not exploratory mock noise.
+- Use concise rationale focused on decisions and trade-offs.
