@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Victor Salgado (vmDev) - Full Stack Developer portfolio focused on product delivery and reliable systems." />
-    <meta name="theme-color" content="#0d1117" />
+    <meta name="theme-color" content="#100e11" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Victor Salgado | Full Stack Developer" />
     <meta property="og:description" content="Frontend and backend case studies focused on business impact and production reliability." />
@@ -18,7 +18,15 @@
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="vmDev home">
-        <img src="assets/1sstlogo.png" alt="Logo vmDev" />
+        <img
+          src="assets/1sstlogo.png"
+          alt="Logo vmDev"
+          width="136"
+          height="40"
+          sizes="136px"
+          decoding="async"
+          fetchpriority="high"
+        />
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
         Menu
@@ -36,9 +44,6 @@
 
     <main id="content">
       <section class="hero" id="home">
-        <video class="hero__video" autoplay muted loop playsinline poster="assets/logotab2.png">
-          <source src="https://cdn.coverr.co/videos/coverr-man-working-on-a-laptop-1570/1080p.mp4" type="video/mp4" />
-        </video>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content container">
           <p class="eyebrow">FULL STACK DEVELOPER · OPEN TO US ROLES</p>
@@ -54,9 +59,18 @@
             <a class="button button--ghost-light" href="https://github.com/Tiggreee" target="_blank" rel="noopener">GitHub</a>
           </div>
           <ul class="hero__metrics" aria-label="Core capabilities">
-            <li><strong>Frontend + Backend</strong><span>End-to-end product delivery</span></li>
-            <li><strong>APIs + Data</strong><span>Reliable integrations and persistence</span></li>
-            <li><strong>US-ready collaboration</strong><span>Remote-first communication and ownership</span></li>
+            <li>
+              <strong>End-to-end delivery</strong>
+              <span>Frontend, backend, APIs, and persistence</span>
+            </li>
+            <li>
+              <strong>Operational focus</strong>
+              <span>Reliability, observability, and practical tradeoffs</span>
+            </li>
+            <li>
+              <strong>Remote-ready</strong>
+              <span>Clear communication and ownership</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -64,49 +78,148 @@
       <section class="section container" id="projects">
         <div class="section__head">
           <p class="eyebrow">FEATURED PROJECTS</p>
-          <h2>Production-minded work with business focus</h2>
+          <h2>Six shipped projects with live demos</h2>
+          <p class="section__intro">
+            Each card links to a public demo first, then the GitHub repository.
+          </p>
         </div>
         <div class="projects-grid">
           <article class="project-card">
-            <p class="project-card__meta">FULL STACK · MONITORING</p>
-            <h3>Sentrylog</h3>
-            <p>Real-time CCTV monitoring platform with alerts and event traceability.</p>
-            <ul>
-              <li>React interface for high-uptime operations.</li>
-              <li>Node + PostgreSQL backend with real-time events.</li>
-              <li>Improved response flow for operational incidents.</li>
-            </ul>
-            <p class="project-card__impact"><strong>Impact:</strong> Reduced reaction latency by improving alert visibility and operator workflow.</p>
-            <a href="https://github.com/Tiggreee/sentrylog" target="_blank" rel="noopener">View code</a>
-          </article>
-
-          <article class="project-card">
-            <p class="project-card__meta">WEB APP · INVOICING</p>
+            <p class="project-card__meta">WEB APP · INVOICING · GITHUB PAGES</p>
             <h3>FacturAutentico</h3>
             <p>CFDI 4.0 workflow designed to reduce capture errors and accelerate admin operations.</p>
             <ul>
+              <li>React + Vite frontend.</li>
               <li>Guided UX for tax-focused data entry.</li>
-              <li>Scalable architecture for business rules.</li>
-              <li>Operationally ready implementation.</li>
+              <li>Deployed static demo on GitHub Pages.</li>
             </ul>
             <p class="project-card__impact"><strong>Impact:</strong> Lowered capture errors and increased consistency for invoice processing steps.</p>
             <div class="project-card__links">
-              <a href="https://github.com/Tiggreee/FacturAutentico" target="_blank" rel="noopener">Code</a>
-              <a href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Demo</a>
+              <a class="button button--solid" href="https://tiggreee.github.io/FacturAutentico/" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/FacturAutentico"
+                target="_blank"
+                rel="noopener"
+                aria-label="FacturAutentico repository on GitHub"
+                >Source</a
+              >
             </div>
           </article>
 
           <article class="project-card">
-            <p class="project-card__meta">TOOLING · INTERACTIVE FRONTEND</p>
+            <p class="project-card__meta">TOOLING · WEB AUDIO · GITHUB PAGES</p>
             <h3>Webqualizer</h3>
             <p>Web audio interface demo focused on interaction fidelity and performance.</p>
             <ul>
               <li>JavaScript + Web Audio API.</li>
               <li>Real-time controls with clear feedback loops.</li>
-              <li>Strong baseline for media-centric interfaces.</li>
+              <li>Static demo on GitHub Pages.</li>
             </ul>
             <p class="project-card__impact"><strong>Impact:</strong> Validated responsive interaction patterns for low-latency media controls.</p>
-            <a href="https://github.com/Tiggreee/Webqualizer" target="_blank" rel="noopener">View code</a>
+            <div class="project-card__links">
+              <a class="button button--solid" href="https://tiggreee.github.io/Webqualizer/" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/Webqualizer"
+                target="_blank"
+                rel="noopener"
+                aria-label="Webqualizer repository on GitHub"
+                >Source</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">FRONTEND · EXPERIMENTAL · GITHUB PAGES</p>
+            <h3>The_Road</h3>
+            <p>Concept-driven HTML experience exploring multiple visual directions and layout ideas.</p>
+            <ul>
+              <li>Static site, fast loads, focused presentation.</li>
+              <li>Iterative UI experiments in one repository.</li>
+              <li>Live on GitHub Pages.</li>
+            </ul>
+            <p class="project-card__impact"><strong>Impact:</strong> Demonstrates breadth of UI iteration without a heavy framework.</p>
+            <div class="project-card__links">
+              <a class="button button--solid" href="https://tiggreee.github.io/The_Road/" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/The_Road"
+                target="_blank"
+                rel="noopener"
+                aria-label="The_Road repository on GitHub"
+                >Source</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">SPA · REACT · VERCEL</p>
+            <h3>TriApp-Frontend</h3>
+            <p>React single-page application deployed to Vercel with client-side routing and dedicated feature routes.</p>
+            <ul>
+              <li>Production-style frontend hosting.</li>
+              <li>Companion backend repo for API routes where applicable.</li>
+              <li>Public URL via Vercel project settings.</li>
+            </ul>
+            <p class="project-card__impact"><strong>Impact:</strong> Shows shipping a routed SPA with a production deployment path.</p>
+            <div class="project-card__links">
+              <a class="button button--solid" href="https://tri-app-frontend.vercel.app" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/TriApp-Frontend"
+                target="_blank"
+                rel="noopener"
+                aria-label="TriApp-Frontend repository on GitHub"
+                >Source</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">TOOLING · PDF · GITHUB PAGES</p>
+            <h3>AIOutputtoPDFweb</h3>
+            <p>Classic Draft Printer — paste long-form AI output, tune layout, export print-ready PDF in the browser.</p>
+            <ul>
+              <li>Client-side document formatting workflow.</li>
+              <li>No server required for the demo path.</li>
+              <li>Hosted on GitHub Pages.</li>
+            </ul>
+            <p class="project-card__impact"><strong>Impact:</strong> Practical utility for repeatable document export from chat-style content.</p>
+            <div class="project-card__links">
+              <a class="button button--solid" href="https://tiggreee.github.io/AIOutputtoPDFweb/" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/AIOutputtoPDFweb"
+                target="_blank"
+                rel="noopener"
+                aria-label="AIOutputtoPDFweb repository on GitHub"
+                >Source</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <p class="project-card__meta">FULL STACK · API INTEGRATION · GITHUB PAGES</p>
+            <h3>TripleIApp (TriIA)</h3>
+            <p>Multi-model comparison arena: send one prompt, evaluate responses side-by-side with session metrics.</p>
+            <ul>
+              <li>Parallel API calls and responsive results layout.</li>
+              <li>Benchmark-oriented UX (latency, tokens, voting).</li>
+              <li>Front-end deployed on GitHub Pages (API keys are yours).</li>
+            </ul>
+            <p class="project-card__impact"><strong>Impact:</strong> Shows asynchronous orchestration and credible UX for concurrent requests.</p>
+            <div class="project-card__links">
+              <a class="button button--solid" href="https://tiggreee.github.io/TripleIApp/" target="_blank" rel="noopener">Live demo</a>
+              <a
+                class="button button--ghost"
+                href="https://github.com/Tiggreee/TripleIApp"
+                target="_blank"
+                rel="noopener"
+                aria-label="TripleIApp repository on GitHub"
+                >Source</a
+              >
+            </div>
           </article>
         </div>
       </section>
@@ -236,6 +349,6 @@
     </footer>
 
     <div class="toast" data-toast role="status" aria-live="polite">Done</div>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </body>
 </html>

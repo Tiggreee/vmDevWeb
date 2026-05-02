@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
 const scrollLinks = document.querySelectorAll('a[href^="#"]');
@@ -8,8 +10,67 @@ const heroContent = document.querySelector('.hero__content');
 
 let toastTimer = null;
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const motionPrefs = window.matchMedia('(prefers-reduced-motion: reduce)');
+const prefersReducedMotion = motionPrefs.matches;
 const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
+const syncScrollDepth = () => {
+  if (prefersReducedMotion) {
+    return;
+  }
+  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+};
+
+let scrollDepthTick = false;
+window.addEventListener(
+  'scroll',
+  () => {
+    if (prefersReducedMotion) {
+      return;
+    }
+    if (scrollDepthTick) {
+      return;
+    }
+    scrollDepthTick = true;
+    requestAnimationFrame(() => {
+      syncScrollDepth();
+      scrollDepthTick = false;
+    });
+  },
+  { passive: true }
+);
+syncScrollDepth();
+
+const initSectionReveals = () => {
+  const sections = document.querySelectorAll('main section:not(.hero)');
+  if (!sections.length) {
+    return;
+  }
+
+  const revealAll = () => {
+    sections.forEach((section) => section.classList.add('is-revealed'));
+  };
+
+  if (!('IntersectionObserver' in window) || prefersReducedMotion) {
+    revealAll();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -8% 0px' }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+};
+
+initSectionReveals();
 
 const showToast = (message, type = 'success') => {
   if (!toast) {
@@ -166,13 +227,13 @@ if (contactForm) {
     });
 
     if (hasError) {
-      showToast('Completa los campos obligatorios', 'error');
+      showToast('Please fill required fields', 'error');
       return;
     }
 
     const botField = contactForm.querySelector('input[name="website"]');
     if (botField && botField.value.trim() !== '') {
-      showToast('Envio bloqueado', 'error');
+      showToast('Submission blocked', 'error');
       return;
     }
 
@@ -183,26 +244,26 @@ if (contactForm) {
     };
 
     if (!isValidContactPayload(payload)) {
-      showToast('Revisa el formato de los campos', 'error');
+      showToast('Check field formats', 'error');
       return;
     }
 
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = 'Enviando...';
+      submitButton.textContent = 'Sending...';
     }
 
     const deliveredByApi = await sendContactToApi(payload);
 
     if (submitButton) {
       submitButton.disabled = false;
-      submitButton.textContent = 'Enviar mensaje';
+      submitButton.textContent = 'Send message';
     }
 
     if (deliveredByApi) {
       contactForm.reset();
-      showToast('Mensaje recibido.');
+      showToast('Message received.');
       return;
     }
 
@@ -210,6 +271,6 @@ if (contactForm) {
     const body = encodeURIComponent(`Name: ${payload.nombre}\nEmail: ${payload.email}\n\nMessage:\n${payload.idea}`);
     window.location.href = `mailto:tiggreee@vmdev.lat?subject=${subject}&body=${body}`;
     contactForm.reset();
-    showToast('Se abrio tu app de correo.');
+    showToast('Opening your mail app.');
   });
 }

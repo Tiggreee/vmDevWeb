@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vmDev — pruebas locales de logo + fondo</title>
+    <style>
+      :root {
+        --bg: #0d1117;
+        --accent: #43d4ff;
+        --accent2: #7af2c9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: #e6edf3;
+        line-height: 1.5;
+        padding: 24px;
+      }
+      h1 {
+        font-size: 1.1rem;
+        margin: 0 0 8px;
+      }
+      p.note {
+        margin: 0 0 20px;
+        color: #9da7b3;
+        max-width: 72ch;
+        font-size: 0.95rem;
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      }
+      .card {
+        border: 1px solid #2b3340;
+        border-radius: 12px;
+        padding: 16px;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--accent2);
+      }
+      .stage {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        min-height: 140px;
+        overflow: hidden;
+      }
+      /* Logo file still has baked checkerboard — these backgrounds hide the illusion */
+      .stage img {
+        max-width: min(200px, 80%);
+        height: auto;
+        display: block;
+      }
+      .a {
+        background: radial-gradient(circle at 30% 20%, rgba(67, 212, 255, 0.22), transparent 45%),
+          linear-gradient(160deg, #0f1722, #0d1117);
+      }
+      .b {
+        background: linear-gradient(135deg, rgba(122, 242, 201, 0.15), rgba(67, 212, 255, 0.12));
+        border: 1px solid rgba(230, 237, 243, 0.12);
+      }
+      .c .plate {
+        padding: 18px 22px;
+        border-radius: 16px;
+        background: rgba(8, 12, 18, 0.72);
+        border: 1px solid rgba(122, 242, 201, 0.35);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      }
+      .d .plate {
+        padding: 16px 20px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.08), transparent 55%),
+          rgba(15, 23, 34, 0.92);
+        border: 1px solid rgba(67, 212, 255, 0.35);
+      }
+      .e {
+        background: #111823;
+      }
+      .e .plate {
+        padding: 14px 18px;
+        border-radius: 14px;
+        backdrop-filter: blur(10px);
+        background: rgba(13, 17, 23, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pruebas locales — logo <code>assets/logotab2.png</code></h1>
+    <p class="note">
+      Esto no quita el fondo del PNG: solo muestra el mismo archivo sobre distintos fondos para que elijas estética.
+      Transparencia real = nuevo archivo (PNG con alpha o SVG), no CSS sobre esta imagen.
+    </p>
+    <div class="grid">
+      <section class="card">
+        <h2>A · Gradiente hero (similar sitio)</h2>
+        <div class="stage a">
+          <img src="../assets/logotab2.png" alt="" width="200" height="200" decoding="async" />
+        </div>
+      </section>
+      <section class="card">
+        <h2>B · Vidrio suave</h2>
+        <div class="stage b">
+          <img src="../assets/logotab2.png" alt="" width="200" height="200" decoding="async" />
+        </div>
+      </section>
+      <section class="card">
+        <h2>C · Placa rectangular</h2>
+        <div class="stage a">
+          <div class="plate">
+            <img src="../assets/logotab2.png" alt="" width="200" height="200" decoding="async" />
+          </div>
+        </div>
+      </section>
+      <section class="card d">
+        <h2>D · Placa circular</h2>
+        <div class="stage a">
+          <div class="plate">
+            <img src="../assets/logotab2.png" alt="" width="200" height="200" decoding="async" />
+          </div>
+        </div>
+      </section>
+      <section class="card e">
+        <h2>E · Frosted (backdrop-blur)</h2>
+        <div class="stage e">
+          <div class="plate">
+            <img src="../assets/logotab2.png" alt="" width="200" height="200" decoding="async" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
