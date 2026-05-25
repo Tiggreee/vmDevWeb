@@ -92,11 +92,15 @@ video {
   border-bottom-color: var(--line);
 }
 
+.brand {
+  display: inline-flex;
+  line-height: 0;
+}
+
 .brand img {
   height: 34px;
   width: auto;
   aspect-ratio: 136 / 40;
-  filter: brightness(1.08) contrast(1.05);
 }
 
 .menu-toggle {
