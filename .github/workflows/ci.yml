@@ -40,6 +40,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run API smoke test
-        env:
-          CONTACT_API_URL: https://api.vmdev.lat
         run: npm run test
