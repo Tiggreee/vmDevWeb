@@ -41,7 +41,8 @@ Live site: https://tiggreee.github.io/vmDevWeb/
   - run `npm run check`
   - run `npm run build`
 - On push/manual (non-PR):
-  - run smoke test against `CONTACT_API_URL`
+  - run smoke test against an in-process mock API (deterministic in CI)
+  - optionally target a real deployment by setting `CONTACT_API_URL`
 
 ## Engineering decisions and tradeoffs
 1. Vanilla frontend instead of framework:
