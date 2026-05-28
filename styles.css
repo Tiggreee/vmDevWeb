@@ -513,6 +513,27 @@ video {
   color: var(--muted);
 }
 
+.signals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.signals article {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 18px;
+}
+
+.signals h3 {
+  margin: 0 0 8px;
+}
+
+.signals p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .timeline {
   display: grid;
   gap: 10px;
@@ -646,6 +667,7 @@ video {
 @media (max-width: 1050px) {
   .projects-grid,
   .process,
+  .signals,
   .value-grid {
     grid-template-columns: 1fr;
   }
