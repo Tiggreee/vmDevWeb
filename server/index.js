@@ -91,71 +91,62 @@ app.get('/api/health', (_req, res) => {
   });
 });
 
+app.get("/privacy", (req, res) => {
+  res.send(`
+    <h1>Privacy Policy</h1>
+    <p>vmDev no comparte, vende ni transfiere tus datos personales a terceros.</p>
+    <p>La información enviada mediante el formulario de contacto se utiliza únicamente para responder a tu mensaje.</p>
+    <p>Si deseas solicitar acceso o eliminación de tus datos, envía un correo a soporte@vmdev.lat.</p>
+  `);
+});
+
+app.get("/terms", (req, res) => {
+  res.send(`
+    <h1>Terms of Service</h1>
+    <p>Al utilizar este sitio aceptas que la información enviada mediante el formulario de contacto será procesada únicamente para fines de comunicación profesional.</p>
+    <p>No se garantiza disponibilidad continua del servicio y el uso indebido del formulario puede resultar en bloqueo automático.</p>
+  `);
+});
+
+app.get("/datadeletion", (req, res) => {
+  res.send(`
+    <h1>Data Deletion Instructions</h1>
+    <p>Para solicitar la eliminación de tus datos, envía un correo a soporte@vmdev.lat.</p>
+  `);
+});
+
 app.post('/api/contact', async (req, res) => {
+  const { nombre, email, idea } = req.body;
+
+  if (!nombre || !email || !idea) {
+    return res.status(400).json({ ok: false, error: 'Missing fields' });
+  }
+
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ ok: false, error: 'Invalid email' });
+  }
+
+  const id = crypto.randomUUID();
+  const source_ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const user_agent = req.headers['user-agent'] || '';
+
   try {
-    const { nombre = '', email = '', idea = '', website = '' } = req.body || {};
-
-    if (typeof website === 'string' && website.trim() !== '') {
-      res.status(200).json({ ok: true });
-      return;
-    }
-
-    const payload = {
-      nombre: String(nombre).trim(),
-      email: String(email).trim(),
-      idea: String(idea).trim()
-    };
-
-    if (!payload.nombre || !payload.email || !payload.idea) {
-      res.status(400).json({ ok: false, error: 'Missing required fields' });
-      return;
-    }
-
-    if (!isValidEmail(payload.email)) {
-      res.status(400).json({ ok: false, error: 'Invalid email format' });
-      return;
-    }
-
-    if (payload.nombre.length > 120 || payload.email.length > 160 || payload.idea.length > 1600) {
-      res.status(400).json({ ok: false, error: 'Field length out of range' });
-      return;
-    }
-
     await pool.query(
       `
-      INSERT INTO contacts (id, nombre, email, idea, source_ip, user_agent, status)
-      VALUES ($1, $2, $3, $4, $5, $6, 'new')
+      INSERT INTO contacts (id, nombre, email, idea, source_ip, user_agent)
+      VALUES ($1, $2, $3, $4, $5, $6)
       `,
-      [
-        crypto.randomUUID(),
-        payload.nombre,
-        payload.email,
-        payload.idea,
-        req.ip || '',
-        req.get('user-agent') || ''
-      ]
+      [id, nombre, email, idea, source_ip, user_agent]
     );
 
-    res.status(201).json({ ok: true });
-  } catch (_error) {
-    res.status(500).json({ ok: false, error: 'Internal server error' });
-  }
-});
-
-app.use((_req, res) => {
-  res.status(404).json({ ok: false, error: 'Route not found' });
-});
-
-const startServer = async () => {
-  try {
-    await initDatabase();
-    app.listen(PORT, () => {
-      console.log(`[vmdev-api] listening on :${PORT}`);
-    });
+    res.status(200).json({ ok: true, id });
   } catch (error) {
-    console.error('[vmdev-api] database init failed', error);
-    process.exit(1);
+    console.error('DB error:', error);
+    res.status(500).json({ ok: false, error: 'Database error' });
   }
-};
+});
 
-startServer();
+app.listen(PORT, async () => {
+  await initDatabase();
+  console.log(`Server running on port ${PORT}`);
+});
