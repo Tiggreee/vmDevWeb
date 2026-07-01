@@ -2,22 +2,24 @@
 
 ## Supported Versions
 
-Security fixes are applied to the `main` branch only.
+| Version | Supported |
+| --- | --- |
+| v0.1.x | Yes |
+| < v0.1.0 | No |
 
 ## Reporting a Vulnerability
 
-Please do not open public issues for security findings.
+Please report vulnerabilities privately by email to tiggreee@vmdev.lat.
 
-Report privately by email:
-- Contact: tiggreee@vmdev.lat
-- Subject: [SECURITY][vmDevWeb] <short summary>
-
-Please include:
-- Affected endpoint or component
-- Reproduction steps
+Include:
+- Affected repository and version/commit
+- Reproduction steps or proof of concept
 - Impact assessment
-- Suggested mitigation if available
+- Suggested mitigation (if available)
 
 Response targets:
-- Initial acknowledgment: within 72 hours
+- Initial acknowledgement: within 72 hours
 - Triage decision: within 7 days
+- Fix timeline: based on severity and exploitability
+
+Do not open public issues for unpatched security vulnerabilities.
