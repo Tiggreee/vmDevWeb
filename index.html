@@ -37,6 +37,7 @@
         <a href="#stack">Stack</a>
         <a href="#process">Process</a>
         <a href="#engineering">Engineering</a>
+        <a href="#testing">Testing</a>
         <a href="#story">Story</a>
         <a href="#contact">Contact</a>
         <a class="button button--ghost" href="https://github.com/Tiggreee" target="_blank" rel="noopener">GitHub</a>
@@ -317,6 +318,34 @@
               <p>AI is used to accelerate drafting, refactoring, and QA support, while final architecture, risk decisions, and production accountability remain fully human-owned.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section container" id="testing">
+        <div class="section__head">
+          <p class="eyebrow">HARDWARE &amp; AI TESTING</p>
+          <h2>Hands-on hardware and local-AI testing</h2>
+          <p class="section__intro">
+            Beyond web delivery, I run structured hardware and local-AI tests: real workloads, measured numbers,
+            and honest notes on what breaks. Same engineering discipline, applied to metal.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <p class="project-card__meta">EGPU &middot; LOCAL AI &middot; COMFYUI</p>
+            <h3>AOOSTAR AG03 eGPU + GTX 1630 for local AI</h3>
+            <p>Field test of a budget eGPU dock plus a low-end GPU driving Stable Diffusion on a mini PC.</p>
+            <ul>
+              <li>768 x 768 image, 50 steps, ~259 s on a GTX 1630 over the dock.</li>
+              <li>Full metrics: VRAM, clocks, power, thermals, and s/it.</li>
+              <li>Honest failure notes: CUDA errors, power quirks, and cabling.</li>
+            </ul>
+            <p class="project-card__impact"><strong>Takeaway:</strong> A bottom-tier GPU can still do real local-AI work on an eGPU dock when you test instead of assume.</p>
+            <div class="project-card__links">
+              <a class="button button--solid" href="testing/aoostar-ag03-gtx1630.html">Full write-up</a>
+              <a class="button button--ghost" href="https://www.reddit.com/r/gpu/s/vYTOiM1RcV" target="_blank" rel="noopener">Discussion on Reddit</a>
+            </div>
+          </article>
         </div>
       </section>
 

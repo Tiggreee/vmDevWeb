@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Field test of the AOOSTAR AG03 eGPU dock with a low-end GTX 1630 running local AI (Stable Diffusion / ComfyUI) on a GEM12+ Pro mini PC. Real metrics and honest failure notes."
+    />
+    <meta name="theme-color" content="#100e11" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AOOSTAR AG03 eGPU + GTX 1630: local AI on a budget stack" />
+    <meta
+      property="og:description"
+      content="A bottom-tier GPU on an eGPU dock rendered a 768x768, 50-step image in ~259s. Full metrics, workflow, and what broke."
+    />
+    <meta property="og:image" content="https://tiggreee.github.io/vmDevWeb/assets/testing/1_hero_gtx_on_dock.jpg" />
+    <link rel="canonical" href="https://tiggreee.github.io/vmDevWeb/testing/aoostar-ag03-gtx1630.html" />
+    <title>AOOSTAR AG03 eGPU + GTX 1630 testing | vmDev</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/2ndlogo.png" />
+    <link rel="apple-touch-icon" href="../assets/3rdlogo.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header is-scrolled">
+      <a class="brand" href="../index.html" aria-label="vmDev home">
+        <img src="../assets/header-logo.webp" alt="Logo vmDev" width="136" height="40" decoding="async" />
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../index.html#testing">Testing</a>
+        <a class="button button--ghost" href="../index.html">Back to portfolio</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="section container article-header">
+        <p class="eyebrow">HARDWARE &amp; AI TESTING</p>
+        <h1>AOOSTAR AG03 eGPU + GTX 1630: local AI on a budget stack</h1>
+        <p class="lead">
+          A field test of a budget external-GPU dock and a bottom-tier GeForce GTX 1630, driving Stable Diffusion
+          (ComfyUI) on an AOOSTAR GEM12+ Pro mini PC. The goal was not raw power. It was to find out whether this
+          compact stack could do real local-AI work instead of just looking useful on paper.
+        </p>
+        <p class="article-meta">eGPU &middot; Local AI &middot; ComfyUI &middot; July 2026</p>
+        <div class="hero__actions">
+          <a class="button button--solid" href="https://www.reddit.com/r/gpu/s/vYTOiM1RcV" target="_blank" rel="noopener"
+            >Read the community thread on Reddit</a
+          >
+          <a class="button button--ghost-light" href="../index.html#testing">Back to portfolio</a>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="article-body">
+          <h2>The setup</h2>
+          <ul>
+            <li>Dock: AOOSTAR AG03 eGPU dock</li>
+            <li>Host: AOOSTAR GEM12+ Pro mini PC (Ryzen 7 PRO 8845HS, Radeon 780M iGPU)</li>
+            <li>GPU under test: MSI GeForce GTX 1630 Ventus XS 4G OC</li>
+            <li>Previously attempted: Radeon RX 6700 XT (never became a realistic match on this dock)</li>
+            <li>32 GB RAM, Windows 11, ComfyUI Windows portable NVIDIA/CUDA build (embedded Python 3.13.12)</li>
+          </ul>
+
+          <h2>Results</h2>
+          <p>
+            Cross-checked between Task Manager, the NVIDIA panel, and the ComfyUI console, a single 768 x 768 image at
+            50 steps finished in roughly 259 to 262 seconds, or about four minutes and twenty seconds. For a card at the
+            bottom of the modern GPU ladder, that is better than I expected.
+          </p>
+          <table class="metric-table">
+            <tbody>
+              <tr><th>GPU usage</th><td>100%</td></tr>
+              <tr><th>VRAM used</th><td>2.7 to 3.1 GB of 4.0 GB</td></tr>
+              <tr><th>Model / VAE staging</th><td>1639 MB / 319 MB</td></tr>
+              <tr><th>20-step runs</th><td>~40 seconds</td></tr>
+              <tr><th>50-step runs</th><td>~259 to 262 seconds (~4.9 to 5.0 s/it)</td></tr>
+              <tr><th>GPU clock / VRAM clock</th><td>~1935 to 1950 MHz / ~5750 MHz</td></tr>
+              <tr><th>GPU power</th><td>~68 to 71 W sustained (brief peaks to ~77 W)</td></tr>
+              <tr><th>GPU temperature</th><td>~52 to 61 C</td></tr>
+            </tbody>
+          </table>
+
+          <h2>What I ran</h2>
+          <p>
+            The workflow was intentionally simple: an SD1.x txt2img graph at 768 x 768, 50 steps, batch size 1, no
+            LoRAs, no refiner, no upscalers. ComfyUI loaded the VAE on cuda:0, staged the base model and the
+            AutoencoderKL with dynamic VRAM loading, and ran cleanly from 0/50 to 50/50 once I fixed a missing output
+            node (the classic prompt_no_outputs mistake).
+          </p>
+
+          <h2>What broke, and what I learned</h2>
+          <p>
+            After a successful long run, a later prompt crashed with a CUDA "unknown error" pointing at
+            torch.cuda.synchronize() and cache cleanup. That usually means the CUDA / PyTorch / driver stack landed in a
+            bad state, not that the graph became invalid. One crash happened right after I touched the back of the card
+            while it was powered and under load, so the lesson stuck: once the dock is live, hands off the card and the
+            cables.
+          </p>
+          <p>
+            Two more honest notes. Power behavior is not obvious; a button that does not feel like a main switch ends up
+            acting like one, and I had to adjust BIOS so the mini PC and dock would fully shut down instead of staying
+            warm. And the cabling looks premium in photos but becomes its own project on a real desk, which is why the
+            layout got rebuilt around it.
+          </p>
+
+          <h2>Takeaway</h2>
+          <p>
+            This was never about building a monster AI machine. It was about getting real, usable results out of a
+            compact setup, hitting the limits the hard way, and coming out of it understanding the hardware far better
+            than when I started. A bottom-tier GPU on an eGPU dock can still do meaningful local-AI work, as long as you
+            test instead of assume.
+          </p>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="section__head">
+          <p class="eyebrow">EVIDENCE</p>
+          <h2>Test gallery</h2>
+          <p class="section__intro">Screenshots kept as PNG for legibility; photos are the real desk, not renders.</p>
+        </div>
+        <div class="testing-gallery">
+          <figure class="testing-figure">
+            <img src="../assets/testing/1_hero_gtx_on_dock.jpg" alt="MSI GTX 1630 mounted on the AOOSTAR AG03 dock" loading="lazy" />
+            <figcaption>MSI GTX 1630 mounted on the AOOSTAR AG03 dock.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/2_generated_image.png" alt="ComfyUI output with live GPU monitoring" loading="lazy" />
+            <figcaption>ComfyUI output alongside live GPU monitoring during the run.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/3_console_259s.png" alt="Console showing 50 of 50 steps in 259.94 seconds" loading="lazy" />
+            <figcaption>Console: 50/50 steps, prompt executed in 259.94 seconds.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/4_workflow.png" alt="ComfyUI SD1.x txt2img graph at 768x768, 50 steps" loading="lazy" />
+            <figcaption>The ComfyUI graph: SD1.x txt2img, 768 x 768, 50 steps.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/5_nvidia_panel.png" alt="NVIDIA panel under load at 1950 MHz and 70 W" loading="lazy" />
+            <figcaption>NVIDIA panel under load: 1950 MHz, 70 W, 52 C, 100% usage.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/6_gtx1630_card.jpg" alt="MSI GeForce GTX 1630 card on the desk" loading="lazy" />
+            <figcaption>The GTX 1630 itself, a Facebook Marketplace find.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/7_cable_puzzle.jpg" alt="AOOSTAR AG03 dock with real-world cabling" loading="lazy" />
+            <figcaption>Real-world cabling: the AG03 turns into a cable puzzle.</figcaption>
+          </figure>
+          <figure class="testing-figure">
+            <img src="../assets/testing/8_final_desk.jpg" alt="Finished desk setup after the rebuild" loading="lazy" />
+            <figcaption>The finished desk after rethinking the whole layout.</figcaption>
+          </figure>
+        </div>
+        <a class="back-link" href="../index.html#testing">Back to portfolio</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>vmDev &middot; Full Stack Portfolio</p>
+      <p>Built by Victor Salgado (vmDev).</p>
+    </footer>
+  </body>
+</html>
