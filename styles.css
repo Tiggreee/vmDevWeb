@@ -802,3 +802,143 @@ video {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Testing article page (testing/*.html) */
+.article-header {
+  padding-top: 116px;
+}
+
+.article-header h1 {
+  margin: 12px 0 0;
+  max-width: 20ch;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 0.96;
+  letter-spacing: -1.2px;
+  text-wrap: balance;
+}
+
+.article-header .lead {
+  margin: 18px 0 0;
+  max-width: 64ch;
+  font-size: 18px;
+  color: color-mix(in srgb, var(--muted) 92%, var(--ink));
+}
+
+.article-meta {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.article-body {
+  max-width: 72ch;
+}
+
+.article-body h2 {
+  margin: 40px 0 10px;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.article-body p {
+  color: color-mix(in srgb, var(--muted) 88%, var(--ink));
+}
+
+.article-body ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.article-body li {
+  color: color-mix(in srgb, var(--muted) 88%, var(--ink));
+}
+
+.metric-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.metric-table th,
+.metric-table td {
+  text-align: left;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.metric-table th {
+  width: 44%;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.metric-table td {
+  color: var(--ink);
+}
+
+.testing-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.testing-figure {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--accent-cool) 40%, var(--line));
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.testing-figure:hover {
+  border-color: color-mix(in srgb, var(--accent-cool) 75%, var(--line));
+  transform: translateY(-2px);
+}
+
+.testing-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.testing-figure figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(230, 237, 243, 0.35);
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 780px) {
+  .testing-gallery {
+    grid-template-columns: 1fr;
+  }
+}
